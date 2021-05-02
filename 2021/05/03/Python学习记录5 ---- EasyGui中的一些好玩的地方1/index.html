@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_N0bug.png"/>
+	<link rel="shortcut icon" href="/img/logo_N0bug.png">
+	
+			    <title>
+    Hexo
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="miccall" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 5.3.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">N0bug</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Python学习记录5 ---- EasyGui中的一些好玩的地方1</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <font color=#999AAA >
+
+</font>
+
+<p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
+<p><font color=#999AAA >之前简单的介绍了EasyGui这个东西 那么这节就来讲一讲它里面的更好玩的地方<br></font></p>
+<h1 id="一、默认参数和关键字参数"><a href="#一、默认参数和关键字参数" class="headerlink" title="一、默认参数和关键字参数"></a>一、默认参数和关键字参数</h1><h2 id="1-1修改默认参数"><a href="#1-1修改默认参数" class="headerlink" title="1.1修改默认参数"></a>1.1修改默认参数</h2><p>对于EasyGui的所有对话框而言，<strong>前两个参数都是消息主题和对话框标题</strong><br><strong>对话框标题默认是一个空字符串，而消息主题通常会有一个简单的默认值。</strong></p>
+<p>默认参数使得可以尽可能去地少设置参数，例如<strong>msgbox()函数标题部分的参数是可选的</strong><br>因此来调用msgbox()函数的时候只需要指定一个消息参数即可，例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> easygui <span class="keyword">as</span> eg</span><br><span class="line">eg.msgbox(<span class="string">&quot;EDG加油&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20210420195606803.png" alt="在这里插入图片描述"></p>
+<p>但是如果我们想让它变得更具体一点的话，可以指定标题参数和消息参数，例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> easygui <span class="keyword">as</span> eg</span><br><span class="line">eg.msgbox(<span class="string">&quot;EDG加油&quot;</span>，<span class="string">&quot;淀粉心声&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>程序实现如图：<br><img src="https://img-blog.csdnimg.cn/20210420195809467.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>这样修改默认参数就成功了</strong></p>
+<h2 id="1-2使用关键字参数"><a href="#1-2使用关键字参数" class="headerlink" title="1.2使用关键字参数"></a>1.2使用关键字参数</h2><p>调用EasyGui函数还可以使用关键字参数，现在假设需要使用一个按钮组件，但不想指定标题参数（第二个参数），仍可以使用关键字参数的方法指定<strong>choices参数</strong>（第三个参数）的值，如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">choices=[<span class="string">&quot;找到女朋友&quot;</span>,<span class="string">&quot;拿到好成绩&quot;</span>,<span class="string">&quot;无欲无求&quot;</span>]</span><br><span class="line">reply =eg.choicebox(<span class="string">&quot;2021年最想完成什么&quot;</span>,choices=choices)</span><br></pre></td></tr></table></figure>
+<p>程序实现如图：<br><img src="https://img-blog.csdnimg.cn/20210420201951647.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="二、使用按钮组件"><a href="#二、使用按钮组件" class="headerlink" title="二、使用按钮组件"></a>二、使用按钮组件</h1><h2 id="2-1-EasyGui在buttonbox-上的函数的调用"><a href="#2-1-EasyGui在buttonbox-上的函数的调用" class="headerlink" title="2.1 EasyGui在buttonbox()上的函数的调用"></a>2.1 EasyGui在buttonbox()上的函数的调用</h2><p><strong>(1)msgbox()</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msgbox(msg=<span class="string">&#x27;(Your message goes here)&#x27;</span>, title=<span class="string">&#x27; &#x27;</span>, ok_button=<span class="string">&#x27;OK&#x27;</span>, image=None, root=None)</span><br></pre></td></tr></table></figure>
+
+<p> <strong>msgbox() 显示一个消息和提供一个 “OK” 按钮，可以指定任意的消息和标题，甚至可以重写 “OK” 按钮的内容。<br>  重写 “OK” 按钮最简单的方法是使用关键字参数：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> easygui <span class="keyword">as</span> eg</span><br><span class="line">eg.msgbox(<span class="string">&quot;学会Pyhon&quot;</span>,ok_button=<span class="string">&quot;继续努力&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>程序实现如下:<br><img src="https://img-blog.csdnimg.cn/20210424165102557.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>(2)ccbox()</strong></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ccbox(msg=<span class="string">&#x27;Shall I continue?&#x27;</span>, title=<span class="string">&#x27; &#x27;</span>, choices=(<span class="string">&#x27;C[o]ntinue&#x27;</span>, <span class="string">&#x27;C[a]ncel&#x27;</span>), image=None, default_choice=<span class="string">&#x27;C[o]ntinue&#x27;</span>, cancel_choice=<span class="string">&#x27;C[a]ncel&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>ccbox()函数提供一个选择:C[0]ntinue或者C[a]ncel,并相应返回True或者False.<br><strong>注意：“C[o]ntinue” 中的 [o] 表示快捷键，也就是说当用户在键盘上敲一下 o 字符，就相当于点击了 “C[o]ntinue” 按键。</strong></p>
+<p><strong>(3)ynbox()</strong></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ynbox(msg=<span class="string">&#x27;Shall I continue?&#x27;</span>, title=<span class="string">&#x27; &#x27;</span>, choices=(<span class="string">&#x27;[&lt;F1&gt;]Yes&#x27;</span>, <span class="string">&#x27;[&lt;F2&gt;]No&#x27;</span>), image=None, default_choice=<span class="string">&#x27;[&lt;F1&gt;]Yes&#x27;</span>, cancel_choice=<span class="string">&#x27;[&lt;F2&gt;]No&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>跟 ccbox() 一样，只不过这里默认的 choices 参数值不同而已，[] 表示将键盘上的 F1 功能按键作为 “Yes” 的快捷键使用。</p>
+<p><strong>(4)buttonbox()</strong></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">buttonbox(msg=<span class="string">&#x27;&#x27;</span>, title=<span class="string">&#x27; &#x27;</span>, choices=(<span class="string">&#x27;Button[1]&#x27;</span>, <span class="string">&#x27;Button[2]&#x27;</span>, <span class="string">&#x27;Button[3]&#x27;</span>), image=None, images=None, default_choice=None, cancel_choice=None, callback=None, run=True)</span><br></pre></td></tr></table></figure>
+<p>可以使用 buttonbox() 定义自己的一组按钮，buttonbox() 会显示一组由你自定义的按钮。<br>当用户点击任意一个按钮的时候，buttonbox() 返回按钮的文本内容。<br>如果用户点击取消或者关闭窗口，那么会返回默认选项（第一个选项）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> easygui <span class="keyword">as</span> eg</span><br><span class="line">eg.buttonbox(msg=<span class="string">&quot;晚饭想要吃什么&quot;</span>,title=<span class="string">&quot;三选一&quot;</span>,choices=(<span class="string">&quot;火锅&quot;</span>,<span class="string">&quot;烧肉&quot;</span>,<span class="string">&quot;蛋糕&quot;</span>))</span><br></pre></td></tr></table></figure>
+<p>程序实现如下:<br><img src="https://img-blog.csdnimg.cn/20210424171907549.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>(5)indexbox()</strong></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">indexbox(msg=<span class="string">&#x27;Shall I continue?&#x27;</span>, title=<span class="string">&#x27; &#x27;</span>, choices=(<span class="string">&#x27;Yes&#x27;</span>, <span class="string">&#x27;No&#x27;</span>), image=None, default_choice=<span class="string">&#x27;Yes&#x27;</span>, cancel_choice=<span class="string">&#x27;No&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>基本跟 buttonbox() 一样，区别就是当用户选择第一个按钮的时候返回序号 0， 选择第二个按钮的时候返回序号 1。<br><strong>(6)boolbox()</strong></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">boolbox(msg=<span class="string">&#x27;Shall I continue?&#x27;</span>, title=<span class="string">&#x27; &#x27;</span>, choices=(<span class="string">&#x27;[Y]es&#x27;</span>, <span class="string">&#x27;[N]o&#x27;</span>), image=None, default_choice=<span class="string">&#x27;Yes&#x27;</span>, cancel_choice=<span class="string">&#x27;No&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>如果第一个按钮被选中则返回 True，否则返回 False。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2021/05/03/Python%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%955%20----%20EasyGui%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E6%96%B91/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2021/05/03/Python%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%955%20----%20EasyGui%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E6%96%B91/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
