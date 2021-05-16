@@ -1,0 +1,300 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_N0bug.png"/>
+	<link rel="shortcut icon" href="/img/logo_N0bug.png">
+	
+			    <title>
+    Hexo
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="miccall" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 5.3.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">N0bug</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Python学习记录6----EasyGui中一些好玩的地方2</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <font color=#999AAA >
+
+</font>
+
+<p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
+<h1 id="一、如何在buttonbox里边显示图片"><a href="#一、如何在buttonbox里边显示图片" class="headerlink" title="一、如何在buttonbox里边显示图片"></a>一、如何在buttonbox里边显示图片</h1><p>当我们调用一个buttonbox()函数 <strong>(如msgbox(),ynbox(),indexbox()等)的时候</strong>，还可以为关键字参数image赋值，可以设置一个.gif或者.png格式的图像:<br><strong>话不多说 直接上代码</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> easygui <span class="keyword">as</span> ac</span><br><span class="line">ac.buttonbox(<span class="string">&#x27;如果我是DJ你会爱我吗?&#x27;</span>,image=<span class="string">&#x27;123.png&#x27;</span>,choices=(<span class="string">&#x27;爱&#x27;</span>,<span class="string">&#x27;不爱&#x27;</span>,<span class="string">&#x27;$%%%%@#&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<p>程序实现 如下:</p>
+<p><img src="https://img-blog.csdnimg.cn/20210512224858456.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>其实 说句实话 完成这一步其实花了我很多的时间 <strong>1.是不知道应该把图片放在哪里  2.是不知道为什么显示不了图片</strong></p>
+<p><strong>解决方案</strong><br>多在网上找资料 实在解决不了可以问问认识的大牛 帮你解决<br><strong>图片必须是png或者gif的形式  并且要和你的py文件放在一个路径下<br>用pycharm编译器的话可以自动选择图片的url</strong></p>
+<p>至于显示不了图片 可以参考这篇博客<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44067083/article/details/100048817?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162083121516780261943526%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=162083121516780261943526&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-100048817.pc_search_result_no_baidu_js&utm_term=buttonbox%E5%8A%A0%E8%BD%BD%E4%B8%8D%E4%BA%86%E5%9B%BE%E7%89%87">解决buttonbox不显示图片的问题</a></p>
+<h2 id="二、为用户提供一系列选项"><a href="#二、为用户提供一系列选项" class="headerlink" title="二、为用户提供一系列选项"></a>二、为用户提供一系列选项</h2><p><strong>buttonbox()**的几个函数为用户提供了一个简单的按钮选项，但如果有很多选项，或者选项的内容特别长的话，更好的策略是为它们提供一个可选择的列表。<br>**choicebox()与multchoicebox()——可选的下拉列表</strong><br><strong>（1）choicebox()</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> easygui <span class="keyword">as</span> ac</span><br><span class="line">ac.choicebox(msg=<span class="string">&#x27;上大学是为了什么?&#x27;</span>,title=<span class="string">&#x27;&#x27;</span>,choices=[<span class="string">&quot;为了理想&quot;</span>,<span class="string">&quot;为了以后多挣钱&quot;</span>,<span class="string">&quot;只是随便玩玩&quot;</span>])`</span><br></pre></td></tr></table></figure>
+<p><strong>choicebox()函数</strong>为用户提供了一个可选择的列表，使用序列（元组或列表）作为选项，这些选项会按照字母进行排序。<br>程序实现如下：<br><img src="https://img-blog.csdnimg.cn/20210516185458358.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>(2)multchoicebox()</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> easygui <span class="keyword">as</span> ac</span><br><span class="line">ac.multchoicebox(msg=<span class="string">&#x27;上大学是为了什么?&#x27;</span>,title=<span class="string">&#x27;&#x27;</span>,choices=[<span class="string">&quot;为了理想&quot;</span>,<span class="string">&quot;为了以后多挣钱&quot;</span>,<span class="string">&quot;只是随便玩玩&quot;</span>])</span><br></pre></td></tr></table></figure>
+<p>multchoicebox()函数也是提供一个可选择的列表，与choicebox（）不同的是，mutlchoicebox（）支持用户选择0个、1个或者同时选择多个选项。<br>multchoicebox（）函数也是使用序列（元组或列表）作为选项，这些选项显示前会按照不区分大小写的方法排好序：<br>程序实现如下：<img src="https://img-blog.csdnimg.cn/20210516190134891.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>同样的内容  用了不同的函数  我们就可以实现两种不一样的功能</strong>  </p>
+<h2 id="三、让用户输入消息"><a href="#三、让用户输入消息" class="headerlink" title="三、让用户输入消息"></a>三、让用户输入消息</h2><p><strong>(1）enterbox()—–文本输入框</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">enterbox(msg=<span class="string">&#x27; Enter something. &#x27;</span>, title=<span class="string">&#x27; &#x27;</span>, default=<span class="string">&#x27; &#x27;</span>, strip=<span class="literal">True</span>, image=<span class="literal">None</span>, root=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<p>msg：需要显示的内容<br>title：窗口的标题<br>default：关键字定义的是文本框默认值<br>strip：的值为True时会自动忽略输入的首尾空格，False则相反<br>image：显示图片（需要路径）</p>
+<p>enterbox()函数为用户提供一个最简单的输入框，返回值为用户输入的字符串：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> easygui <span class="keyword">as</span> ac</span><br><span class="line">ac.enterbox(msg=<span class="string">&#x27; 对今天的自己你想说什么 &#x27;</span>, title=<span class="string">&#x27; 每日一问&#x27;</span>, default=<span class="string">&#x27; &#x27;</span>, strip=<span class="literal">True</span>, image=<span class="literal">None</span>, root=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<p>程序实现如图：</p>
+<p><img src="https://img-blog.csdnimg.cn/20210516190936640.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>（2）integerbox()—数字输入</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">integerbox(msg=<span class="string">&#x27;&#x27;</span>, title=<span class="string">&#x27; &#x27;</span>, default=<span class="string">&#x27;&#x27;</span>, lowerbound=<span class="number">0</span>, upperbound=<span class="number">99</span>, image=<span class="literal">None</span>, root=<span class="literal">None</span>,)</span><br></pre></td></tr></table></figure>
+<p>msg：需要显示的内容<br>title：窗口的标题<br>default：关键字定义的是文本框默认值<br>lowerbound：输入的最小值<br>upperbound：输入的最大值<br>image：显示图片（需要路径）</p>
+<p>返回值：<br> 输入内容后返回值为输入的数字<br> 点击Cancel按钮返回None<br> 右上角×号返回None<br>输入数值超出范围时会给出提示后从新输入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> easygui <span class="keyword">as</span> ac</span><br><span class="line">ac.integerbox(msg=<span class="string">&#x27;猜猜我的幸运数字&#x27;</span>, title=<span class="string">&#x27; 数字游戏&#x27;</span>, default=<span class="string">&#x27;7&#x27;</span>, lowerbound=<span class="number">0</span>, upperbound=<span class="number">99</span>, image=<span class="literal">None</span>, root=<span class="literal">None</span>,)</span><br></pre></td></tr></table></figure>
+<p>程序实现如下：<br><img src="https://img-blog.csdnimg.cn/20210516192700307.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>(3)multenterbox()—多选项输入</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">multenterbox(msg=<span class="string">&#x27; &#x27;</span>, title=<span class="string">&#x27; &#x27;</span>, fields=(), values=())</span><br></pre></td></tr></table></figure>
+<p>msg：需要显示的内容<br>title：窗口的标题<br>fields：填写条目名称<br>values：默认内容</p>
+<p>返回值：<br> 输入内容后返回值为输入的内容，以列表的形式<br> 点击Cancel按钮返回None<br> 右上角×号返回None</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> easygui <span class="keyword">as</span> ac</span><br><span class="line">ac.multenterbox(msg=(<span class="string">&#x27;请输入下列信息&#x27;</span>), title=<span class="string">&#x27;账号中心 &#x27;</span>, fields=([<span class="string">&#x27;用户名&#x27;</span>,<span class="string">&#x27;真实姓名&#x27;</span>,<span class="string">&#x27;电话&#x27;</span>,<span class="string">&#x27;QQ&#x27;</span>,<span class="string">&#x27;Wechat&#x27;</span>]), values=())</span><br></pre></td></tr></table></figure>
+<p>程序实现如下：<img src="https://img-blog.csdnimg.cn/20210516194437689.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2021/05/16/Python%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%956----EasyGui%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E6%96%B92/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2021/05/16/Python%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%956----EasyGui%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E6%96%B92/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
