@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Python学习记录7-----EasyGui中一些好玩的地方3 | Hexo</title>
+  <title>BUU-REVERSE-rsa | Hexo</title>
 
   
     
@@ -693,7 +693,7 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/15.jpg" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/14.jpg" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
@@ -704,7 +704,7 @@
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
           <script>
             var typed = new Typed("#post-detail-header-title", {
-              strings: ['Python学习记录7-----EasyGui中一些好玩的地方3'],
+              strings: ['BUU-REVERSE-rsa'],
               startDelay: 100,
               typeSpeed: 100,
               loop: false,
@@ -729,7 +729,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2021-06-02</span>
+        <span class="post-time">2021-06-09</span>
       </div>
       
       <div class="post-tags-categories">
@@ -737,42 +737,17 @@
         
       </div>
       <div class="post-content">
-        <p>﻿# Python学习记录7—–EasyGui中一些好玩的地方3</p>
-<p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
-<h1 id="一、让用户输入密码"><a href="#一、让用户输入密码" class="headerlink" title="一、让用户输入密码"></a>一、让用户输入密码</h1><p>有时候可能需要让用户输入密码等敏感信息，那么界面看上去应该是这样的：*<strong><strong>**</strong></strong>。<br><strong>1 passwordbox()</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwordbox(msg=‘Enter your password.’, title=’ ‘, default=’’, image=<span class="literal">None</span>, root=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
-<p>passwordbox() 跟 enterbox() 样式一样，不同的是用户输入的内容用星号（*）显示出来，该函数返回用户输入的字符串：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> easygui <span class="keyword">as</span> ac</span><br><span class="line">ac.passwordbox(msg=<span class="string">&#x27;请输入密码：&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>程序实现如下：<br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210522203159822.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="在这里插入图片描述"></p>
-<p><strong>2 multpasswordbox()</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">multpasswordbox(msg=‘Fill <span class="keyword">in</span> values <span class="keyword">for</span> the fields.’, title=’ <span class="string">&#x27;, fields=(), values=(), callback=None, run=True)</span></span><br></pre></td></tr></table></figure>
-<p>multpasswordbox() 跟 multenterbox() 使用相同的接口，但当它显示的时候，最后一个输入框显示为密码的形式（*）：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> easygui <span class="keyword">as</span> ac</span><br><span class="line">ac.multpasswordbox(msg=<span class="string">&#x27;请输入用户名和密码：&#x27;</span>,title=<span class="string">&#x27;登录 &#x27;</span>, fields=(<span class="string">&quot;用户名：&quot;</span>,<span class="string">&quot;密码：&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>程序实现如下：<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210522203518472.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="在这里插入图片描述"></p>
-<h2 id="二、显示文本"><a href="#二、显示文本" class="headerlink" title="二、显示文本"></a>二、显示文本</h2><p>EasyGUI 还提供函数用于显示文本。</p>
-<p><strong>1 textbox()</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">textbox(msg=’’, title=’ ‘, text=’’, codebox=<span class="literal">False</span>, callback=<span class="literal">None</span>, run=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-<p>textbox() 函数默认会以比例字体（参数 codebox=True 设置为等宽字体）来显示文本内容（自动换行），这个函数适合用于显示一般的书面文字。</p>
-<p>注：text 参数设置可编辑文本区域的内容，可以是字符串、列表或者元祖类型。<br><strong>2 codebox()</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">codebox(msg=’’, title=’ ‘, text=’’)</span><br></pre></td></tr></table></figure>
-<p>codebox() 以等宽字体显示文本内容（不自动换行），相当于 textbox(codebox=True)</p>
-<h2 id="三、目录与文件"><a href="#三、目录与文件" class="headerlink" title="三、目录与文件"></a>三、目录与文件</h2><p>GUI 编程中一个常见的场景是要求用户输入目录及文件名，EasyGUI 提供了一些基本函数让用户来浏览文件系统，选择一个目录或文件。<br><strong>.1 diropenbox()</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diropenbox(msg=<span class="literal">None</span>, title=<span class="literal">None</span>, default=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
-<p>diropenbox() 函数用于提供一个对话框，返回用户选择的目录名（带完整路径哦），如果用户选择 “Cancel” 则返回 None。</p>
-<p>default 参数用于设置默认的打开目录（请确保设置的目录已存在）。</p>
-<p><strong>2 fileopenbox()</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fileopenbox(msg=<span class="literal">None</span>, title=<span class="literal">None</span>, default=’*’, filetypes=<span class="literal">None</span>, multiple=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-<p>fileopenbox() 函数用于提供一个对话框，返回用户选择的文件名（带完整路径哦），如果用户选择 “Cancel” 则返回 None。<br>关于 default 参数的设置方法：</p>
-<p>*<em>default 参数指定一个默认路径，通常包含一个或多个通配符。<br>如果设置了 default 参数，fileopenbox() 显示默认的文件路径和格式。<br>default 默认的参数是 ‘</em>’，即匹配所有格式的文件。**</p>
-<p><strong>例如：<br>default=“c:/fishc/.py” 即显示 C:\fishc 文件夹下所有的 Python 文件。<br>default=”c:/fishc/test.py” 即显示 C:\fishc 文件夹下所有的名字以 test 开头的 Python 文件。</strong></p>
-<p>关于 filetypes 参数的设置方法：</p>
-<p>可以是包含文件掩码的字符串列表，例如：filetypes = [“.txt”]<br>可以是字符串列表，列表的最后一项字符串是文件类型的描述，例如：filetypes = [“.css”, [“.htm”, “.html”, “HTML files”]]</p>
-<p>最后是 multiple 参数，如果为 True 则表示可以同时选择多个文件。<br><strong>3 filesavebox()</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">filesavebox(msg=<span class="literal">None</span>, title=<span class="literal">None</span>, default=’’, filetypes=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
-<p>filesavebox() 函数提供一个对话框，让用于选择文件需要保存的路径（带完整路径哦），如果用户选择 “Cancel” 则返回 None。</p>
-<p>default 参数应该包含一个文件名（例如当前需要保存的文件名），当然也可以设置为空的，或者包含一个文件格式掩码的通配符。</p>
-<p>filetypes 参数的设置方法请参考 fileopenbox() 函数。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对于EasyGui的学习就到此为止吧 接下来要学习 类和对象  以及模块等的学习 </p>
+        <p>﻿## BUU REVERSE  rsa<br><strong>1.</strong><br>打开后发现了这两个文件<br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210523203213314.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="在这里插入图片描述"></p>
+<p>不用多说flag.enc 文件应该是加密后的东西 那么我们就直接先看pub.key里面的东西</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-----BEGIN PUBLIC KEY-----</span><br><span class="line">MDwwDQYJKoZIhvcNAQEBBQADKwAwKAIhAMAzLFxkrkcYL2wch21CM2kQVFpY9+7+</span><br><span class="line">/AvKr1rzQczdAgMBAAE=</span><br><span class="line">-----END PUBLIC KEY-----</span><br></pre></td></tr></table></figure>
+<p><strong>2</strong><br>猜测应该是RSA算法的一个公钥  <a target="_blank" rel="noopener" href="http://tool.chacuo.net/cryptrsakeyparse">RSA公私钥分解</a></p>
+<p><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210523204341621.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="在这里插入图片描述"><br>公钥指数及模数信息:<br>key长度： 256<br>模数：C0332C5C64AE47182F6C1C876D42336910545A58F7EEFE<br>FC0 BCAAF5AF341CCDD<br>指数：65537 (0x10001)<br>获取到:<br><strong>e = 65537<br>n=869344822960481191906660620034948005889056560172030256<br>17216654058378322103517(模数转换为十进制)</strong></p>
+<p><a target="_blank" rel="noopener" href="http://www.factordb.com/index.php?query=86934482296048119190666062003494800588905656017203025617216654058378322103517">通过n分析pq</a><br><strong>3</strong><br><strong>通过n解析p,q<br>p = 285960468890451637935629440372639283459<br>q = 304008741604601924494328155975272418463</strong></p>
+<p>还可以利用yafu分析出来pq<a target="_blank" rel="noopener" href="https://blog.csdn.net/vhkjhwbs/article/details/101160822?ops_request_misc=&request_id=&biz_id=102&utm_term=yafu%E5%88%86%E6%9E%90pq&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-2-.pc_search_result_no_baidu_js&spm=1018.2226.3001.4187">yafu分析</a><br><strong>4.</strong><br>得到pq之后 我们就可以利用脚本来解密</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">import</span> rsa</span><br><span class="line"></span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line">n = <span class="number">86934482296048119190666062003494800588905656017203025617216654058378322103517</span></span><br><span class="line">p = <span class="number">285960468890451637935629440372639283459</span></span><br><span class="line">q = <span class="number">304008741604601924494328155975272418463</span></span><br><span class="line"></span><br><span class="line">phin = (q-<span class="number">1</span>)*(p-<span class="number">1</span>)</span><br><span class="line">d = gmpy2.invert(e, phin)</span><br><span class="line"></span><br><span class="line">key = rsa.PrivateKey(n, e, <span class="built_in">int</span>(d), p, q)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;C:\\Users\\10245\\Desktop\\output\\flag.enc&quot;</span>, <span class="string">&quot;rb+&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f = f.read()</span><br><span class="line">    print(rsa.decrypt(f, key))</span><br></pre></td></tr></table></figure>
+<p><strong>最后得到flag{decrypt_256}</strong></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这是第一次遇见这样的题目 觉得有些特别 并且学到了很多东西<br>更深入地了解了RSA算法<br>也学习了yafu工具的使用  利用rsa模块和gmpy2模块对RSA进行解密<br>以下是值得一看的文章<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/dbs1215/article/details/48953589">RSA算法的深入了解</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Mayfly-nymph/p/11576913.html">BUU-RE-RSA</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/hhh5460/p/5243410.html">python下RSA 加密/解密，签名/验证</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/aoque9909/article/details/101112802?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162177411816780261992812%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=162177411816780261992812&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-1-101112802.pc_search_result_no_baidu_js&utm_term=yafu%E5%88%86%E6%9E%90pq&spm=1018.2226.3001.4187">RSA学习档案</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39153421/article/details/89820144?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162177411816780261992812%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=162177411816780261992812&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-2-89820144.pc_search_result_no_baidu_js&utm_term=yafu%E5%88%86%E6%9E%90pq&spm=1018.2226.3001.4187">RSA攻击方法总结</a></p>
 
       </div>
       
@@ -783,7 +758,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2021/06/02/Python学习记录7-----EasyGui中一些好玩的地方3/" target="_blank" title="Python学习记录7-----EasyGui中一些好玩的地方3">http://example.com/2021/06/02/Python学习记录7-----EasyGui中一些好玩的地方3/</a>
+    <a href="/2021/06/09/BUU-REVERSE-rsa/" target="_blank" title="BUU-REVERSE-rsa">http://example.com/2021/06/09/BUU-REVERSE-rsa/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -801,43 +776,22 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/14.jpg" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/2021/06/09/BUU-REVERSE-rsa/" class="post-nav-link">
-      <div class="title">
-        <i class="fa fa-angle-left"></i> Prev:
-        <div>BUU-REVERSE-rsa</div>
-      </div>
-      
-      <!-- <div class="content">
-        ﻿## BUU REVERSE  rsa1.打开后发现了这两个文件
-不用多说flag.enc 文件应该是加密后的东西 那
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/5.jpg" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="/medias/15.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2021/05/16/Python%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%956----EasyGui%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E6%96%B92/" class="post-nav-link">
+    <a href="/2021/06/02/Python%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%957-----EasyGui%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%A5%BD%E7%8E%A9%E7%9A%84%E5%9C%B0%E6%96%B93/" class="post-nav-link">
       <div class="title">
         Next: <i class="fa fa-angle-right"></i>
-        <div>Python学习记录6----EasyGui中一些好玩的地方2</div>
+        <div>Python学习记录7-----EasyGui中一些好玩的地方3</div>
       </div>
       <!-- <div class="content">
-        
-
-
-
+        ﻿# Python学习记录7—–EasyGui中一些好玩的地方3
 @TOC
-一、如何在buttonbox里边显示图片当我们调用一个buttonbox()函数 (如msgbox()
+一、让用户输入密码有时候可能需要让用户输入密
       </div> -->
     </a>
   </div>
