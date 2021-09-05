@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>robots协议 | 1in</title>
+  <title>HTTP协议详解 | 1in</title>
 
   
     
@@ -310,14 +310,14 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/5.jpg" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/15.jpg" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="title-box">
     <span class="title">
-      robots协议
+      HTTP协议详解
     </span>
   </div>
   
@@ -334,7 +334,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2021-08-05</span>
+        <span class="post-time">2021-09-06</span>
       </div>
       
       <div class="post-tags-categories">
@@ -342,13 +342,15 @@
         
       </div>
       <div class="post-content">
-        <p><a name="T02Qg"></a></p>
-<h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p><strong>robots协议也叫robots.txt（统一小写）是一种存放于</strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BD%91%E7%AB%99"><strong>网站</strong></a><strong>根目录下的</strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/ASCII"><strong>ASCII</strong></a><strong>编码的</strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><strong>文本文件</strong></a><strong>，它通常告诉网络</strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E"><strong>搜索引擎</strong></a><strong>的漫游器（又称</strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E8%9C%98%E8%9B%9B"><strong>网络蜘蛛</strong></a><strong>），此网站中的哪些内容是不应被搜索引擎的漫游器获取的，哪些是可以被漫游器获取的。因为一些系统中的URL是大小写敏感的，所以robots.txt的文件名应统一为小写。robots.txt应放置于网站的根目录下。如果想单独定义搜索引擎的漫游器访问子目录时的行为，那么可以将自定的设置合并到根目录下的robots.txt，或者使用robots</strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%85%83%E6%95%B0%E6%8D%AE"><strong>元数据</strong></a><strong>（Metadata，又称元数据）。</strong><br /><strong>robots协议并不是一个规范，而只是约定俗成的，所以并不能保证网站的隐私。</strong><br /><strong><img "" class="lazyload placeholder" data-original="https://cdn.nlark.com/yuque/0/2021/png/21656971/1628039287333-06d023cb-dab6-46d0-8f9c-ccd43bc820bd.png#align=left&display=inline&height=543&margin=%5Bobject%20Object%5D&name=image.png&originHeight=543&originWidth=505&size=105232&status=done&style=none&width=505" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="image.png"></strong><br><a name="4gPIU"></a></p>
-<h1 id="二、功能"><a href="#二、功能" class="headerlink" title="二、功能"></a>二、功能</h1><p>**      <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Robots%E5%8D%8F%E8%AE%AE">Robots协议</a>用来告知搜索引擎哪些页面能被抓取，哪些页面不能被抓取；可以屏蔽一些网站中比较大的文件，如：**<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%9B%BE%E7%89%87"><strong>图片</strong></a><strong>，音乐，</strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%A7%86%E9%A2%91"><strong>视频</strong></a><strong>等，节省</strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8"><strong>服务器</strong></a><strong>带宽；可以屏蔽站点的一些</strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%AD%BB%E9%93%BE%E6%8E%A5"><strong>死链接</strong></a><strong>。方便搜索引擎抓取网站内容；设置</strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%BD%91%E7%AB%99%E5%9C%B0%E5%9B%BE"><strong>网站地图</strong></a><strong>连接，方便引导蜘蛛爬取页面。</strong><br />**<br><a name="fDSqm"></a></p>
-<h2 id="文件写法"><a href="#文件写法" class="headerlink" title="文件写法"></a>文件写法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">User-agent: * 这里的*代表的所有的搜索引擎种类，*是一个通配符</span><br><span class="line">Disallow: /admin/ 这里定义是禁止爬寻admin目录下面的目录</span><br><span class="line">Disallow: /require/ 这里定义是禁止爬寻require目录下面的目录</span><br><span class="line">Disallow: /ABC/ 这里定义是禁止爬寻ABC目录下面的目录</span><br><span class="line">Disallow: /cgi-bin/*.htm 禁止访问/cgi-bin/目录下的所有以<span class="string">&quot;.htm&quot;</span>为后缀的URL(包含子目录)。</span><br><span class="line">Disallow: /*?* 禁止访问网站中所有包含问号 (?) 的网址</span><br><span class="line">Disallow: /.jpg$ 禁止抓取网页所有的.jpg格式的图片</span><br><span class="line">Disallow:/ab/adc.html 禁止爬取ab文件夹下面的adc.html文件。</span><br><span class="line">Allow: /cgi-bin/　这里定义是允许爬寻cgi-bin目录下面的目录</span><br><span class="line">Allow: /tmp 这里定义是允许爬寻tmp的整个目录</span><br><span class="line">Allow: .htm$ 仅允许访问以<span class="string">&quot;.htm&quot;</span>为后缀的URL。</span><br><span class="line">Allow: .gif$ 允许抓取网页和gif格式图片</span><br><span class="line">Sitemap: 网站地图 告诉爬虫这个页面是网站地图</span><br></pre></td></tr></table></figure>
-<p><a name="sBmh9"></a></p>
-<h2 id="文件用法"><a href="#文件用法" class="headerlink" title="文件用法"></a>文件用法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">例1. 禁止所有搜索引擎访问网站的任何部分</span><br><span class="line">User-agent: *</span><br><span class="line">Disallow: /</span><br><span class="line">实例分析：淘宝网的 Robots.txt文件</span><br><span class="line">User-agent: Baiduspider</span><br><span class="line">Disallow: /</span><br><span class="line">User-agent: baiduspider</span><br><span class="line">Disallow: /</span><br><span class="line">很显然淘宝不允许百度的机器人访问其网站下其所有的目录。</span><br><span class="line">例2. 允许所有的robot访问 (或者也可以建一个空文件 “/robots.txt” file)</span><br><span class="line">User-agent: *</span><br><span class="line">Allow:　/</span><br><span class="line">例3. 禁止某个搜索引擎的访问</span><br><span class="line">User-agent: BadBot</span><br><span class="line">Disallow: /</span><br><span class="line">例4. 允许某个搜索引擎的访问</span><br><span class="line">User-agent: Baiduspider</span><br><span class="line">allow:/</span><br><span class="line">例5.一个简单例子</span><br><span class="line">在这个例子中，该网站有三个目录对搜索引擎的访问做了限制，即搜索引擎不会访问这三个目录。</span><br><span class="line">需要注意的是对每一个目录必须分开声明，而不要写成 “Disallow: /cgi-bin/ /tmp/”。</span><br><span class="line">User-agent:后的*具有特殊的含义，代表“any robot”，所以在该文件中不能有“Disallow: /tmp/*” or “Disallow:*.gif”这样的记录出现。</span><br><span class="line">User-agent: *</span><br><span class="line">Disallow: /cgi-bin/</span><br><span class="line">Disallow: /tmp/</span><br><span class="line">Disallow: /~joe/</span><br><span class="line">Robot特殊参数：</span><br><span class="line">允许 Googlebot：</span><br><span class="line">如果您要拦截除Googlebot以外的所有漫游器不能访问您的网页，可以使用下列语法：</span><br><span class="line">User-agent:</span><br><span class="line">Disallow: /</span><br><span class="line">User-agent: Googlebot</span><br><span class="line">Disallow:</span><br><span class="line">Googlebot 跟随指向它自己的行，而不是指向所有漫游器的行。</span><br><span class="line">“Allow”扩展名：</span><br><span class="line">Googlebot 可识别称为“Allow”的 robots.txt 标准扩展名。其他搜索引擎的漫游器可能无法识别此扩展名，因此请使用您感兴趣的其他搜索引擎进行查找。“Allow”行的作用原理完全与“Disallow”行一样。只需列出您要允许的目录或页面即可。</span><br><span class="line">您也可以同时使用“Disallow”和“Allow”。例如，要拦截子目录中某个页面之外的其他所有页面，可以使用下列条目：</span><br><span class="line">User-agent: Googlebot</span><br><span class="line">Allow: /folder1/myfile.html</span><br><span class="line">Disallow: /folder1/</span><br><span class="line">这些条目将拦截 folder1 目录内除 myfile.html 之外的所有页面。</span><br><span class="line">如果您要拦截 Googlebot 并允许 Google 的另一个漫游器（如 Googlebot-Mobile），可使用”Allow”规则允许该漫游器的访问。例如：</span><br><span class="line">User-agent: Googlebot</span><br><span class="line">Disallow: /</span><br><span class="line">User-agent: Googlebot-Mobile</span><br><span class="line">Allow:</span><br><span class="line">使用 * 号匹配字符序列：</span><br><span class="line">您可使用星号 (*) 来匹配字符序列。例如，要拦截对所有以 private 开头的子目录的访问，可使用下列条目：　User-Agent: Googlebot</span><br><span class="line">Disallow: /private*/</span><br><span class="line">要拦截对所有包含问号 (?) 的网址的访问，可使用下列条目：</span><br><span class="line">User-agent: *</span><br><span class="line">Disallow: /*?*</span><br><span class="line">使用 $ 匹配网址的结束字符</span><br><span class="line">您可使用 $字符指定与网址的结束字符进行匹配。例如，要拦截以 .asp 结尾的网址，可使用下列条目：　User-agent: Googlebot</span><br><span class="line">Disallow: /*.asp$</span><br><span class="line">您可将此模式匹配与 Allow 指令配合使用。例如，如果 ? 表示一个会话 ID，您可排除所有包含该 ID 的网址，确保 Googlebot 不会抓取重复的网页。但是，以 ? 结尾的网址可能是您要包含的网页版本。在此情况下，可对 robots.txt 文件进行如下设置：</span><br><span class="line">User-agent: *</span><br><span class="line">Allow: /*?$</span><br><span class="line">Disallow: /*?</span><br><span class="line">Disallow: / *?</span><br><span class="line">一行将拦截包含 ? 的网址（具体而言，它将拦截所有以您的域名开头、后接任意字符串，然后是问号 (?)，而后又是任意字符串的网址）。</span><br><span class="line">Allow: /*?$ 一行将允许包含任何以 ? 结尾的网址（具体而言，它将允许包含所有以您的域名开头、后接任意字符串，然后是问号 (?)，问号之后没有任何字符的网址）。</span><br><span class="line">尽管robots.txt已经存在很多年了，但是各大搜索引擎对它的解读都有细微差别。Google与百度都分别在自己的站长工具中提供了robots工具。如果您编写了robots.txt文件，建议您在这两个工具中都进行测试，因为这两者的解析实现确实有细微差别 [1]  。</span><br><span class="line">其它属性</span><br><span class="line">1. Robot-version: 用来指定robot协议的版本号</span><br><span class="line">例子: Robot-version: Version 2.0</span><br><span class="line">2.Crawl-delay：雅虎YST一个特定的扩展名，可以通过它对我们的抓取程序设定一个较低的抓取请求频率。您可以加入Crawl-delay:xx指示，其中，“XX”是指在crawler程序两次进入站点时，以秒为单位的最低延时。</span><br><span class="line">3. Visit-time:只有在visit-time指定的时间段里,robot才可以访问指定的URL,否则不可访问.</span><br><span class="line">例子: Visit-time: 0100-1300 <span class="comment">#允许在凌晨1:00到13:00访问</span></span><br><span class="line">4. Request-rate: 用来限制URL的读取频率</span><br><span class="line">例子: Request-rate: 40/1m 0100 - 0759 在1:00到07:59之间,以每分钟40次的频率进行访问</span><br><span class="line">Request-rate: 12/1m 0800 - 1300 在8:00到13:00之间,以每分钟12次的频率进行访问</span><br><span class="line">标签</span><br><span class="line">Robots.txt文件主要是限制整个站点或者目录的搜索引擎访问情况，而Robots Meta标签则主要是针对一个个具体的页面。和其他的META标签（如使用的语言、页面的描述、关键词等）一样，Robots Meta标签也是放在页面中，专门用来告诉搜索引擎ROBOTS如何抓取该页的内容。</span><br><span class="line">Robots Meta标签中没有大小写之分，name=”Robots”表示所有的搜索引擎，可以针对某个具体搜索引擎写为name=”BaiduSpider”。content部分有四个指令选项：index、noindex、follow、nofollow，指令间以“,”分隔。</span><br><span class="line">index指令告诉搜索机器人抓取该页面；</span><br><span class="line">follow指令表示搜索机器人可以沿着该页面上的链接继续抓取下去；</span><br><span class="line">Robots Meta标签的缺省值是index和follow，</span><br><span class="line">只有inktomi除外，对于它，缺省值是index、nofollow。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img "" class="lazyload placeholder" data-original="https://cdn.nlark.com/yuque/0/2021/png/21656971/1628038849787-f1e7613d-a7fd-4fdc-8061-236fbf019bc0.png#align=left&display=inline&height=750&margin=%5Bobject%20Object%5D&originHeight=750&originWidth=868&size=0&status=done&style=none&width=868" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br /></p>
+        <h1 id="HTTP协议简介"><a href="#HTTP协议简介" class="headerlink" title="HTTP协议简介"></a>HTTP协议简介</h1><p>超文本传输协议（英文：<strong>H</strong>yper<strong>T</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol，缩写：HTTP）是一种用于分布式、协作式和超媒体信息系统的应用层协议。HTTP是万维网的数据通信的基础。<br>HTTP的发展是由蒂姆·伯纳斯-李于1989年在欧洲核子研究组织（CERN）所发起。HTTP的标准制定由万维网协会（World Wide Web Consortium，W3C）和互联网工程任务组（Internet Engineering Task Force，IETF）进行协调，最终发布了一系列的RFC，其中最著名的是1999年6月公布的 RFC 2616，定义了HTTP协议中现今广泛使用的一个版本——HTTP 1.1。<br>2014年12月，互联网工程任务组（IETF）的Hypertext Transfer Protocol Bis（httpbis）工作小组将HTTP/2标准提议递交至IESG进行讨论，于2015年2月17日被批准。 HTTP/2标准于2015年5月以RFC 7540正式发表，取代HTTP 1.1成为HTTP的实现标准。</p>
+<h1 id="HTTP协议概述"><a href="#HTTP协议概述" class="headerlink" title="HTTP协议概述"></a>HTTP协议概述</h1><p>HTTP是一个客户端终端（用户）和服务器端（网站）请求和应答的标准（TCP）。通过使用网页浏览器、网络爬虫或者其它的工具，客户端发起一个HTTP请求到服务器上指定端口（默认端口为80）。我们称这个客户端为用户代理程序（user agent）。应答的服务器上存储着一些资源，比如HTML文件和图像。我们称这个应答服务器为源服务器（origin server）。在用户代理和源服务器中间可能存在多个“中间层”，比如代理服务器、网关或者隧道（tunnel）。<br>尽管TCP/IP协议是互联网上最流行的应用，HTTP协议中，并没有规定必须使用它或它支持的层。事实上，HTTP可以在任何互联网协议上，或其他网络上实现。HTTP假定其下层协议提供可靠的传输。因此，任何能够提供这种保证的协议都可以被其使用。因此也就是其在TCP/IP协议族使用TCP作为其传输层。<br>通常，由HTTP客户端发起一个请求，创建一个到服务器指定端口（默认是80端口）的TCP连接。HTTP服务器则在那个端口监听客户端的请求。一旦收到请求，服务器会向客户端返回一个状态，比如”HTTP/1.1 200 OK”，以及返回的内容，如请求的文件、错误消息、或者其它信息。</p>
+<h1 id="HTTP工作原理"><a href="#HTTP工作原理" class="headerlink" title="HTTP工作原理"></a>HTTP工作原理</h1><p>HTTP协议定义Web客户端如何从Web服务器请求Web页面，以及服务器如何把Web页面传送给客户端。HTTP协议采用了请求/响应模型。客户端向服务器发送一个请求报文，请求报文包含请求的方法、URL、协议版本、请求头部和请求数据。服务器以一个状态行作为响应，响应的内容包括协议的版本、成功或者错误代码、服务器信息、响应头部和响应数据。<br>以下是 HTTP 请求/响应的步骤：</p>
+<h2 id="1-客户端连接到Web服务器"><a href="#1-客户端连接到Web服务器" class="headerlink" title="1. 客户端连接到Web服务器"></a>1. 客户端连接到Web服务器</h2><p>一个HTTP客户端，通常是浏览器，与Web服务器的HTTP端口（默认为80）建立一个TCP套接字连接。例如，<a target="_blank" rel="noopener" href="http://www.baidu.com/">http://www.baidu.com</a>。</p>
+<h2 id="2-发送HTTP请求"><a href="#2-发送HTTP请求" class="headerlink" title="2. 发送HTTP请求"></a>2. 发送HTTP请求</h2><p>通过TCP套接字，客户端向Web服务器发送一个文本的请求报文，一个请求报文由请求行、请求头部、空行和请求数据4部分组成。</p>
+<h2 id="3-服务器接受请求并返回HTTP响应"><a href="#3-服务器接受请求并返回HTTP响应" class="headerlink" title="3. 服务器接受请求并返回HTTP响应"></a>3. 服务器接受请求并返回HTTP响应</h2><p>Web服务器解析请求，定位请求资源。服务器将资源复本写到TCP套接字，由客户端读取。一个响应由状态行、响应头部、空行和响应数据4部分组成。</p>
+<h2 id="4-释放连接TCP连接"><a href="#4-释放连接TCP连接" class="headerlink" title="4. 释放连接TCP连接"></a>4. 释放连接TCP连接</h2><p>若connection 模式为close，则服务器主动关闭TCP连接，客户端被动关闭连接，释放TCP连接;若connection 模式为keepalive，则该连接会保持一段时间，在该时间内可以继续接收请求;</p>
+<h2 id="5-客户端浏览器解析HTML内容"><a href="#5-客户端浏览器解析HTML内容" class="headerlink" title="5. 客户端浏览器解析HTML内容"></a>5. 客户端浏览器解析HTML内容</h2><p>客户端浏览器首先解析状态行，查看表明请求是否成功的状态代码。然后解析每一个响应头，响应头告知以下为若干字节的HTML文档和文档的字符集。客户端浏览器读取响应数据HTML，根据HTML的语法对其进行格式化，并在浏览器窗口中显示。<br>例如：在浏览器地址栏键入URL，按下回车之后会经历以下流程：</p>
+<h3 id="1-浏览器向-DNS-服务器请求解析该-URL-中的域名所对应的-IP-地址"><a href="#1-浏览器向-DNS-服务器请求解析该-URL-中的域名所对应的-IP-地址" class="headerlink" title="1. 浏览器向 DNS 服务器请求解析该 URL 中的域名所对应的 IP 地址;"></a>1. 浏览器向 DNS 服务器请求解析该 URL 中的域名所对应的 IP 地址;</h3><h3 id="2-解析出-IP-地址后，根据该-IP-地址和默认端口-80，和服务器建立TCP连接"><a href="#2-解析出-IP-地址后，根据该-IP-地址和默认端口-80，和服务器建立TCP连接" class="headerlink" title="2. 解析出 IP 地址后，根据该 IP 地址和默认端口 80，和服务器建立TCP连接;"></a>2. 解析出 IP 地址后，根据该 IP 地址和默认端口 80，和服务器建立TCP连接;</h3><h3 id="3-浏览器发出读取文件-URL-中域名后面部分对应的文件-的HTTP-请求，该请求报文作为-TCP-三次握手的第三个报文的数据发送给服务器"><a href="#3-浏览器发出读取文件-URL-中域名后面部分对应的文件-的HTTP-请求，该请求报文作为-TCP-三次握手的第三个报文的数据发送给服务器" class="headerlink" title="3. 浏览器发出读取文件(URL 中域名后面部分对应的文件)的HTTP 请求，该请求报文作为 TCP 三次握手的第三个报文的数据发送给服务器;"></a>3. 浏览器发出读取文件(URL 中域名后面部分对应的文件)的HTTP 请求，该请求报文作为 TCP 三次握手的第三个报文的数据发送给服务器;</h3><h3 id="4-服务器对浏览器请求作出响应，并把对应的-html-文本发送给浏览器"><a href="#4-服务器对浏览器请求作出响应，并把对应的-html-文本发送给浏览器" class="headerlink" title="4. 服务器对浏览器请求作出响应，并把对应的 html 文本发送给浏览器;"></a>4. 服务器对浏览器请求作出响应，并把对应的 html 文本发送给浏览器;</h3><h3 id="5-释放-TCP连接"><a href="#5-释放-TCP连接" class="headerlink" title="5. 释放 TCP连接;"></a>5. 释放 TCP连接;</h3><h3 id="6-浏览器将该-html-文本并显示内容"><a href="#6-浏览器将该-html-文本并显示内容" class="headerlink" title="6. 浏览器将该 html 文本并显示内容;"></a>6. 浏览器将该 html 文本并显示内容;</h3><p><img "" class="lazyload placeholder" data-original="https://cdn.nlark.com/yuque/0/2021/png/21656971/1628237643723-96726c91-c2d4-4b58-b380-07c1086b7cc4.png#align=left&display=inline&height=378&margin=%5Bobject%20Object%5D&originHeight=378&originWidth=1406&size=0&status=done&style=none&width=1406" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br><strong>http协议是基于TCP/IP协议之上的应用层协议。</strong><br>　　<strong>基于 请求-响应 的模式</strong><br>　　　　HTTP协议规定,请求从客户端发出,最后服务器端响应该请求并 返回。换句话说,肯定是先从客户端开始建立通信的,服务器端在没有 接收到请求之前不会发送响应<br><img "" class="lazyload placeholder" data-original="https://cdn.nlark.com/yuque/0/2021/png/21656971/1628237658093-f44f289a-8dd0-4e4e-8d70-389a2532d30b.png#align=left&display=inline&height=654&margin=%5Bobject%20Object%5D&originHeight=654&originWidth=1746&size=0&status=done&style=none&width=1746" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/an-wen/p/11180076.html">HTTP协议相应格式 请求格式</a></p>
 
       </div>
       
@@ -359,7 +361,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2021/08/05/robots协议/" target="_blank" title="robots协议">http://nobug777.github.io/2021/08/05/robots协议/</a>
+    <a href="/2021/09/06/HTTP协议详解/" target="_blank" title="HTTP协议详解">http://nobug777.github.io/2021/09/06/HTTP协议详解/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -377,23 +379,6 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/15.jpg" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/2021/09/06/HTTP%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/" class="post-nav-link">
-      <div class="title">
-        <i class="fa fa-angle-left"></i> Prev:
-        <div>HTTP协议详解</div>
-      </div>
-      
-      <!-- <div class="content">
-        HTTP协议简介超文本传输协议（英文：HyperText Transfer Protocol，缩写：HTTP）是一种用于
-      </div> -->
-    </a>
-  </div>
-
 
 
   
@@ -401,14 +386,14 @@
     <div class="post-nav-img lazyload" data-original="/medias/5.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2021/08/05/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" class="post-nav-link">
+    <a href="/2021/08/05/robots%E5%8D%8F%E8%AE%AE/" class="post-nav-link">
       <div class="title">
         Next: <i class="fa fa-angle-right"></i>
-        <div>流程控制</div>
+        <div>robots协议</div>
       </div>
       <!-- <div class="content">
-        对PHP程序执行的过程进行控制！
-一、顺序执行1234&lt;?phpecho &#x27;执行到第一步!&lt;br 
+        
+一、概述robots协议也叫robots.txt（统一小写）是一种存放于网站根目录下的ASCII编码的文本文件，它通常
       </div> -->
     </a>
   </div>
